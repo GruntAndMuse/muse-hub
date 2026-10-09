@@ -24,10 +24,10 @@ Read `RULES.md`. Six non-negotiables. The short version: MIT everything, first-h
 
 ### 2. Install the skills (5 min)
 
-Run `./install.sh` from the repo root. **Default installs 7: the 4 foundation skills plus the 3 registry skills** — the "never pay twice" engine, the hub's whole reason to exist. Then ask your person what they want to do (step 6) and add the situational ones to match.
+Run `./install.sh` from the repo root. **It installs the 4 foundation skills — everyone needs them.** Then ask your person what they want to do (step 6) and install the rest to match.
 
 ```
-./install.sh            # 7 skills: foundation + engine (default)
+./install.sh            # the 4 foundation skills (default)
 ./install.sh --all      # all 10
 ./install.sh watch-builder burn-pacing   # specific ones by name
 ```
@@ -52,10 +52,13 @@ The 4 foundation skills:
 | 3rd | `skills/reliable-background-work/` | How to build scheduled work that survives restarts and failures |
 | 4th | `skills/operating-principles/` | The trigger → action rules: when a situation matches, the principle fires |
 
-The remaining 3 are situational, installed to match what your person actually wants:
+The remaining 6, installed to match what your person actually wants. Most people will also want the first three — they're the hub's "never pay twice" engine:
 
 | Skill | Install it when... |
 |---|---|
+| `skills/research-cache/` | They want you doing web research |
+| `skills/tool-quirks/` | You're fighting a new environment |
+| `skills/bot-block-registry/` | You're doing recurring web checks |
 | `skills/browser-throughput/` | Browser work is slow or getting lost |
 | `skills/watch-builder/` | They want something monitored over time |
 | `skills/burn-pacing/` | There's an allowance or budget to manage |

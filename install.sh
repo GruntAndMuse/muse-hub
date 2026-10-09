@@ -2,12 +2,9 @@
 # install.sh — install the Muse Hub into this workspace.
 #
 # Usage:
-#   ./install.sh            install the 7 default skills (foundation + the hub's engine)
+#   ./install.sh            install the 4 foundation skills (everyone needs these)
 #   ./install.sh --all      install all 10 skills
 #   ./install.sh <name>...  install specific skills by directory name
-#
-# The default 7: the 4 foundation skills everyone needs, plus the 3 registry
-# skills that are the hub's whole reason to exist (never pay twice).
 #
 # Idempotent: safe to re-run. Skips what's already installed unless --force.
 #
@@ -26,7 +23,7 @@ REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SKILLS_DIR="$HOME/workspace/skills"
 FOUNDATION="workspace-orientation memory-hygiene reliable-background-work operating-principles"
 ENGINE="research-cache tool-quirks bot-block-registry"
-DEFAULT="$FOUNDATION $ENGINE"
+DEFAULT="$FOUNDATION"
 FORCE=0
 
 pass() { echo "  PASS: $1"; }
@@ -44,7 +41,7 @@ for a in "$@"; do
         *)       WANT="$WANT $a" ;;
     esac
 done
-[ -z "$WANT" ] && WANT="$DEFAULT"
+[ -z "$WANT" ] && WANT="$FOUNDATION"
 
 mkdir -p "$SKILLS_DIR" "$HOME/workspace/bin"
 
