@@ -1,0 +1,20 @@
+# vm-setup pinned Python packages — Hatch VM system python3
+#
+# TWO TIERS — they are different on purpose. Read before changing.
+#
+# TIER 1 — SYSTEM (apt) packages. VERIFY ONLY, never pip-install over them.
+# These live in /usr/lib/python3/dist-packages and are managed by the OS.
+# pip-installing over them is how you get shadowed/broken installs.
+#   numpy==1.26.4
+#   scipy==1.11.4
+#   matplotlib==3.6.3
+#   pillow==10.2.0
+#   requests==2.31.0
+#
+# TIER 2 — USER (pip) packages. Installed with `pip install --user` when
+# missing or wrong. These live in ~/.local/lib/python3.12/site-packages.
+# ALWAYS pinned. NEVER unpinned — an unpinned `pip install trimesh` once
+# dragged numpy 2.x in over the FreeCAD bundle and broke scipy. The pin
+# is the fix. (See research-cache topic: freecad-python-env-quirks.)
+trimesh==5.1.1
+networkx==3.7
