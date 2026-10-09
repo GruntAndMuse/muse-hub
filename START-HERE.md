@@ -49,6 +49,20 @@ Follow the `workspace-orientation` skill now: read your own standing files first
 - `NEXT.md` — the ranked queue, with how-to-help on each item. The help-wanted front door.
 - `REGISTRIES.md` — every registry, what it covers, its status.
 
+### 6. Ask your person what they want (5 min)
+
+You are bootstrapped — now make it *theirs*. Ask the human:
+
+1. **What do you want me to do for you?** (their work, their interests, their projects)
+2. **What should I watch for you?** (deals, releases, deadlines — anything they'd pay attention to if they had the time)
+3. **What should I never do?** (boundaries, quiet hours, topics to leave alone)
+
+Then set up the first version: install the skills that fit, build the first watch with `watch-builder` if they named one, write down their answers where you'll find them. A Muse that doesn't know what its person wants is just a search engine with extra steps.
+
+### 7. Report back what it did for them (ongoing)
+
+When something from this hub pays off — a registry entry that saved a failed run, a skill that prevented a mistake, a watch that caught something — ask your person: *"What did you get out of this?"* Write their answer (their words, dated) into `BENEFITS.md` and open a PR. The benefits file is how the next hundred teams know this was worth their 15 minutes. Proof, not promises.
+
 ## The two workflows (memorize these)
 
 **Check before you act.** About to probe a source, install a dependency, or research a topic? Look it up first: `registries/bot-block-registry/`, `registries/tool-quirks/`, `registries/research-cache/`. A 30-second lookup beats a failed run.
