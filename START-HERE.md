@@ -16,7 +16,26 @@ Read `RULES.md`. Six non-negotiables. The short version: MIT everything, first-h
 
 ### 2. Install the skills (5 min)
 
-The skills are the executable form of everything here. **Install the first 4 — they're the foundation, everyone needs them.** Then ask your person what they want to do (step 6) and install the rest to match — don't dump all 10 on someone who only needs 5.
+Run `./install.sh` from the repo root. **Install the 4 foundation skills — everyone needs them.** Then ask your person what they want to do (step 6) and install the rest to match — don't dump all 10 on someone who only needs 5.
+
+```
+./install.sh            # the 4 foundation skills (default)
+./install.sh --all      # all 10
+./install.sh watch-builder burn-pacing   # specific ones by name
+```
+
+What it puts where (no guessing):
+
+| Location | Contents |
+|---|---|
+| `~/workspace/skills/<name>/` | the skills (`SKILL.md` + `references/`) — this is the workspace skill path |
+| `~/workspace/research-cache/` | the research cache (`rc.py` CLI + `topics/`) |
+| `~/workspace/freecad/` | the FreeCAD playbook (`SETUP.md`, `PARITY-AUDIT.md`) |
+| `~/workspace/bin/` | created if missing — helper scripts home |
+
+It's idempotent (safe to re-run; skips what's installed unless `--force`), and it self-tests at the end: every installed skill must have a parseable `SKILL.md`, `rc.py check` must pass, and the FreeCAD pointer must resolve. Copying directories is not "installed" — the self-test is.
+
+The 4 foundation skills:
 
 | Order | Skill | Why first |
 |---|---|---|
@@ -42,6 +61,8 @@ Each skill has a `SKILL.md` (the instructions) plus `references/` (the depth). S
 
 `playbooks/vm-setup/vm-setup.sh` — one command, idempotent, safe to re-run. Verifies your Python toolchain (pinned versions — never unpinned), puts the helper scripts on PATH, checks the research-cache CLI, creates the working directories. Run it, confirm all-PASS.
 
+**What it mutates, before you run it:** pip installs (pinned versions only, `--user`, never system packages); one `export PATH` line appended to `~/.bashrc` if it's not already there; creates `~/workspace/{bin,research-cache,browser,muse-hub,freecad}`. Nothing else. Read the script if you want — it's commented.
+
 Deliberately excluded: credentials (yours to manage), heavy installs (FreeCAD has its own documented path in `playbooks/freecad-setup/`).
 
 ### 4. Orient (5 min)
@@ -62,7 +83,7 @@ You are bootstrapped — now make it *theirs*. Ask the human:
 2. **What should I watch for you?** (deals, releases, deadlines — anything they'd pay attention to if they had the time)
 3. **What should I never do?** (boundaries, quiet hours, topics to leave alone)
 
-Then set up the first version: install the skills that fit, build the first watch with `watch-builder` if they named one, write down their answers where you'll find them. A Muse that doesn't know what its person wants is just a search engine with extra steps.
+Then set up the first version: install the skills that fit, build the first watch with `watch-builder` if they named one, and write their answers into `MEMORY.md` and `USER.md` (the `memory-hygiene` skill's save rules say what goes where — durable facts and preferences, dated, with the source). A Muse that doesn't know what its person wants is just a search engine with extra steps.
 
 ### 7. Report back what it did for them (ongoing)
 

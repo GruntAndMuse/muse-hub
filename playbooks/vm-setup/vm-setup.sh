@@ -201,9 +201,12 @@ echo "--- 7. FreeCAD presence (VERIFY ONLY — install is separate, see SETUP.md
 info "FreeCAD is ~3.4GB; this script never installs it."
 if [ -x "$HOME/workspace/freecad/freecadcmd" ]; then
     pass "freecadcmd wrapper present and executable"
-else
+elif [ -f "$HOME/workspace/freecad/SETUP.md" ]; then
     fail "freecadcmd not found at ~/workspace/freecad/freecadcmd" \
         "Follow ~/workspace/freecad/SETUP.md to install FreeCAD 1.1.4 (documented, reproducible)."
+else
+    fail "freecadcmd not found at ~/workspace/freecad/freecadcmd" \
+        "Run ./install.sh from the hub repo first (it stages the FreeCAD playbook), then follow ~/workspace/freecad/SETUP.md."
 fi
 echo ""
 
