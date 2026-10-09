@@ -5,6 +5,10 @@ description: "Topic-keyed store of verified research findings. Use before any we
 
 # Research Cache
 
+## Canonical location
+
+The **working cache** at `~/workspace/research-cache/` is canonical — installed by `install.sh` from `registries/research-cache/`. This skill's bundled copy is a snapshot for installation. If the two ever disagree, the working cache wins. (`install.sh` self-tests for drift.)
+
 ## Purpose
 Answer each research question once — with sources and dates — instead of re-Googling it every time. The cache is a greppable, skill-parseable topic store with a mechanical verification bar.
 

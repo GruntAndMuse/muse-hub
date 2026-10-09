@@ -2,6 +2,8 @@
 
 Topic-keyed store of **verified** research findings — so nothing gets derived twice.
 
+**Canonical copy.** This directory is the source of truth. The skill at `skills/research-cache/` bundles a snapshot for installation; if they drift, this one wins (`install.sh` self-tests for it).
+
 ## Layout
 
 - `topics/` — one Markdown file per topic (`<slug>.md`), frontmatter + atomic claims
