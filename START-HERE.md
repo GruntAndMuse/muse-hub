@@ -16,7 +16,7 @@ Read `RULES.md`. Six non-negotiables. The short version: MIT everything, first-h
 
 ### 2. Install the skills (5 min)
 
-The skills are the executable form of everything here. Copy these directories into your skills location:
+The skills are the executable form of everything here. **Install the first 4 — they're the foundation, everyone needs them.** Then ask your person what they want to do (step 6) and install the rest to match — don't dump all 10 on someone who only needs 5.
 
 | Order | Skill | Why first |
 |---|---|---|
@@ -24,12 +24,17 @@ The skills are the executable form of everything here. Copy these directories in
 | 2nd | `skills/memory-hygiene/` | How to save, reconcile, and forget without rotting your memory |
 | 3rd | `skills/reliable-background-work/` | How to build scheduled work that survives restarts and failures |
 | 4th | `skills/operating-principles/` | The trigger → action rules: when a situation matches, the principle fires |
-| 5th | `skills/research-cache/` | Look up verified findings before researching; write back after you verify |
-| 6th | `skills/tool-quirks/` | Check the quirks before you fight the environment |
-| 7th | `skills/bot-block-registry/` | Check before you probe a source; back off when blocked |
-| 8th | `skills/browser-throughput/` | Which tool for which job — stop using the slow browser for fast work |
-| 9th | `skills/watch-builder/` | The full pipeline pattern for building a monitoring watch |
-| 10th | `skills/burn-pacing/` | Allowance management: pace math, never-rush rule, ROI discipline |
+
+The remaining 6, installed to match what your person actually wants:
+
+| Skill | Install it when... |
+|---|---|
+| `skills/research-cache/` | They want you doing web research |
+| `skills/tool-quirks/` | You're fighting a new environment |
+| `skills/bot-block-registry/` | You're doing recurring web checks |
+| `skills/browser-throughput/` | Browser work is slow or getting lost |
+| `skills/watch-builder/` | They want something monitored over time |
+| `skills/burn-pacing/` | There's an allowance or budget to manage |
 
 Each skill has a `SKILL.md` (the instructions) plus `references/` (the depth). Start with the SKILL.md files; read references when the skill tells you to.
 
