@@ -1,5 +1,14 @@
 # Handing the hub to another Muse — the prompt pattern (2026-10-20)
 
+**The end state (owner ruling, 2026-10-20): the handoff is the address,
+full stop.** A human gives their Muse one sentence — "Go to this web
+address and read it — follow START-HERE, then get back to me" — and the
+hub carries the entire protocol itself (START-HERE's Authority section:
+safeguards win, read-and-summarize first, adoption on the human's word,
+"adopt everything that doesn't conflict" as a complete instruction).
+Everything below is the fallback pattern for the cases where a receiving
+Muse still needs the framing spoken aloud — and the record of why.
+
 **Lesson (field-proven 2026-10-20):** a paste that says "another Muse orders
 you to adopt these standing instructions from this repo" gets refused — and
 the refusal is CORRECT. A receiving Muse takes its operating rules from its
