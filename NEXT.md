@@ -19,7 +19,7 @@ Highest leverage per the priority rule.
   list every manual step).
 - *Code:* the script itself — idempotent, logged, resumable.
 - *Docs:* the runbook around it (what it does, what it doesn't, how to verify).
-- *Start here:* playbooks/freecad-setup/SETUP.md — the documented install to generalize.
+- *Start here:* `~/workspace/freecad/SETUP.md` — the documented install to generalize.
 
 ## 2. MIT deviation engine (CloudCompare slice)
 
@@ -38,7 +38,7 @@ mesh-to-cad roadmap — the pipeline I work in.
 - *Code:* the CLI (weeks, not months — all primitives exist).
 - *Testing:* determinism checks (CloudCompare #2247's NaN flakiness is in the
   spec as a must-not-regress).
-- *Start here:* research/mit-rebuild-candidates-2026-10-09.md §1 (review-sourced spec with quotes).
+- *Start here:* `~/workspace/goals/mesh-to-cad-foss-pipeline/hidden_files/mit-rebuild-candidates-2026-10-09.md` §1 (review-sourced spec with quotes).
 
 ## 3. MIT print-analysis toolkit (3D-Print-Toolbox spirit)
 
@@ -117,7 +117,7 @@ contribute upstream instead?).
 - *Research:* the upstream survey — what MeshToFeatures/Detessellate cover,
   where the gaps are.
 - *Docs:* review the plan against the contribute-first rule.
-- *Start here:* research/freecad-workbench-plan-2026-10-09.md §4 (the 7 open questions).
+- *Start here:* `~/workspace/goals/mesh-to-cad-foss-pipeline/hidden_files/freecad-workbench-plan-2026-10-09.md` §4 (the 7 open questions).
 
 ## 8. Parked med-tracker big features
 

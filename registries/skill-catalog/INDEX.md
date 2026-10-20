@@ -63,6 +63,7 @@
 | podcast | bundled | good | 2026-10-09 | Compose and deliver audio content: podcast episodes, briefings, narrated |
 | printify | bundled | unrated | 2026-10-09 | Printify: catalog data, shops, products, orders. |
 | quickbooks | bundled | unrated | 2026-10-09 | QuickBooks business via Intuit MCP: reports, invoices, customers, products, payments. |
+| raven-art | custom | good | 2026-10-10 | Generate Muninn raven illustrations with correct anatomy: refs, specs, composite-first. |
 | replit | bundled | unrated | 2026-10-09 | Replit: read, create, update, and publish apps via official MCP. |
 | research-cache | draft | excellent | 2026-10-09 | Topic-keyed store of verified research findings. Check before researching; |
 | self-awareness | bundled | good | 2026-10-09 | Ground self-referential answers ("what can you do?", "what do you remember?") |

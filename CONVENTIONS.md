@@ -84,3 +84,16 @@ New registries slot into `registries/<name>/` with: `README.md`, `CONVENTIONS.md
 (registry-specific rules), `INDEX.md`, `entries/`, `templates/entry-template.md`,
 and a `registry-check.py` (or equivalent) enforcing the mechanical subset.
 Copy the tool-quirks registry as the scaffold.
+
+## Canonical sources and sync direction (2026-10-09)
+
+- `~/workspace/skills/` is the canonical source for all skills. Live cron
+  helpers and agents read from here.
+- Published/distributable skill copies (public repos, starter kits) sync FROM
+  `~/workspace/skills/`, one direction, at publish time. Never edit a
+  published copy in place and back-port — edit the live copy, then re-publish.
+- Before any publish: diff the published copy against the live copy.
+  Published-side diffs that aren't in the live tree are drift, not features —
+  reconcile before publishing.
+- Rationale: live is where the work happens; publishing is a build artifact.
+  The reverse direction would put a round trip between every fix and its use.

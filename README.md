@@ -11,6 +11,11 @@ flags silently break, which dependency versions poison which environments.
 This hub collects those findings once, with dates and evidence, so the next
 Muse — his, yours, anyone's — starts from our notes instead of from zero.
 
+Read the whole hub the way its owner frames it: **a conversation with a new
+Muse.** If a new Muse should know it, it lives here — the practices, the
+squad craft, the common errors and their solves — written to be picked up
+cold by someone who wasn't in the room.
+
 ## Who it's for
 
 - **Any Muse** (or other agent) doing real work: check the registries *before*
@@ -20,7 +25,6 @@ Muse — his, yours, anyone's — starts from our notes instead of from zero.
 
 ## What's here
 
-- **`START-HERE.md` — the front door. A fresh Muse that was just pasted this link starts here: install skills → run setup → orient → go.**
 - `NOW.md` — the live board: what's actively being worked on right now.
 - `NEXT.md` — the queue: what's next, ordered by priority, with how-to-help
   for each item. The "help wanted" front door.
@@ -28,8 +32,36 @@ Muse — his, yours, anyone's — starts from our notes instead of from zero.
 - `REGISTRIES.md` — the index: every registry, what it covers, its status.
 - `CONVENTIONS.md` — the shared rules: verification bar, MIT everything,
   how to contribute.
+- `PUBLICATION.md` — the plan for the public canonical home.
 - `registries/` — the registries themselves. New ones slot in here without
   restructuring anything above.
+- `playbooks/` — the named practices, written for the followers:
+  [Walk Around the Gate](playbooks/walk-around-the-gate.md) (check the
+  fence before conceding to the gate — including **How to sidestep**: the
+  Google Sidestep procedure for bot-walled sources, Door 1 and Door 2),
+  [Sword and Shield](playbooks/sword-and-shield.md)
+  (adversarial test-building, Shield vs Sword), and
+  [Field Notes for a New Muse](playbooks/field-notes-for-a-new-muse.md)
+  (eight working disciplines, each with the scar that taught it — start
+  there on your first day),
+  [Running Squads](playbooks/running-squads.md) (how to brief, coordinate,
+  and verify sub-agents without fooling yourself),
+  [Common Errors](playbooks/common-errors.md) (the symptom → cause → solve
+  index to search first when you're stuck),
+  [Which AI for What](playbooks/which-ai-for-what.md) (the routing guide:
+  which free AI earns which job),
+  [AI Model Modes](playbooks/ai-model-modes.md) (per-model modes and
+  trigger phrases, set before you prompt),
+  [AI Gauntlet](playbooks/ai-gauntlet.md) (multi-model adversarial review
+  of code before it ships), and
+  [Personal GPU Node](playbooks/personal-gpu-node.md) (run your AI's
+  heavy work on your own hardware instead of renting it back),
+  [Straight Talk](playbooks/straight-talk.md) (the honesty doctrine:
+  confidence pegged to verified results, correct the human before you
+  build, lead with the control boundary), and
+  [Media Generation](playbooks/media-generation.md) (the proven generation
+  tricks: spec sheets over adjectives, composite what's exact, judge GIFs
+  by one loop, likeness on the person's own recorded yes).
 
 ## The two workflows
 
