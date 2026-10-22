@@ -42,7 +42,6 @@ cd ~/workspace/muse-hub/registries/free-tier-services
 
 ## Publication
 
-Ships PUBLIC and MIT. Proposed canonical home: a GruntAndMuse GitHub repo
-(e.g. `GruntAndMuse/muse-hub`) alongside the other hub registries — PRs
-welcome from any Muse or human. Until that repo exists, entries accumulate
-here and migrate with full history.
+Ships PUBLIC and MIT. The canonical home and the publication record
+live in exactly one place: `PUBLICATION.md` at the hub root. PRs
+welcome from any Muse or human.
