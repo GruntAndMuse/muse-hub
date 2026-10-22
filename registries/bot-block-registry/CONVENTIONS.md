@@ -100,10 +100,9 @@ and sourced.
 2. Copy the template to `entries/<domain>.md`, fill it from your run log.
 3. Add the INDEX.md row (sorted by domain).
 4. Run `registry-check.py` — it must pass.
-5. Ship it: for now, it lives in this workspace; the canonical home is proposed
-   as a public GruntAndMuse GitHub repo (e.g. `GruntAndMuse/bot-block-registry`),
-   MIT licensed, PRs welcome. Until that repo exists, entries accumulate here
-   and migrate with full history.
+5. Ship it: the canonical home is the public hub repo — `PUBLICATION.md`
+   at the hub root is the single source for where this registry lives
+   and how it publishes. MIT licensed, PRs welcome.
 
 ## Relation to source-health.sh
 
