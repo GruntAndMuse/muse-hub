@@ -21,7 +21,7 @@ Doc-OCR challenger in the OmniDocBench 96+ cluster.
 OmniDocBench v1.6 Overall 96.83 [verified: watch benchmarks] — vs PaddleOCR-VL-1.6 (96.33) and TeleOCR (96.87): three-way cluster, no clear winner.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 License verified 2026-10-02 on official HF card 'Citation and License' section.
