@@ -1,7 +1,7 @@
 # Browser Throughput Audit — 2026-10-09
 
 **Scope:** every recurring browser workload in this shop — GPU hunt (2x/day), shoe
-watch (2x/day), FOSS model watch (2x/day), Sacramento deed-fraud watch (daily).
+watch (2x/day), FOSS model watch (2x/day), deed-fraud watch (daily).
 **Method:** read the actual cron definitions, mined the run logs for timing and
 failure patterns, and measured the fast tools directly.
 **Audience:** written for the followers — any Muse running the same slow browser.
@@ -20,7 +20,7 @@ failure patterns, and measured the fast tools directly.
    a lost report never means re-doing searches.
 
 2. **No adaptive backoff: the same bot walls get probed 2x/day for weeks.**
-   Amazon has been bot-blocked for ~20 straight shoe-watch runs and is still
+   Amazon has been bot-blocked for weeks of straight shoe-watch runs and is still
    probed every run; Famous Footwear (Cloudflare) likewise. Each probe burns
    minutes confirming a wall that hasn't moved. Fix: `source-health.sh`
    (built, tested) — tracks consecutive failures per source and backs off to
@@ -28,7 +28,7 @@ failure patterns, and measured the fast tools directly.
    watch alone: ~2.5 hrs/month of pure wall-staring.
 
 3. **Full slow sweeps run 2x/day with a near-zero slow-leg hit rate.** GPU hunt:
-   48 runs over 24 days, ZERO qualifying finds from the ~15-min retail browser
+   across the whole logged history, ZERO qualifying finds from the ~15-min retail browser
    leg; every near-miss came from the fast Facebook CLI leg. Shoe watch: weeks
    of 6–8 live source checks, zero qualifying finds (the 2E is delisted; this is
    a restock watch). Fix: two-tier hunts — fast tier
@@ -40,7 +40,7 @@ failure patterns, and measured the fast tools directly.
 
 ## 1. Measured: where the time really goes
 
-### Deed-fraud watch (daily, 09:20)
+### Deed-fraud watch (daily)
 - **Capture itself is fast:** 4 exact-name searches + 4 screenshots = ~6 min
   (2026-10-09: screenshots 06:31–06:37 PDT). The browser is NOT the bottleneck.
 - **The bottleneck is fragility:** 2026-10-09 required two browser tasks (lost
@@ -52,11 +52,11 @@ failure patterns, and measured the fast tools directly.
 - The PIL timestamp step is a ~15-line inline `python3 -c` one-liner in the
   cron def. Works, but unreviewable and copy-pasted.
 
-### GPU hunt (2x/day, 07:30 / 16:30)
-- **Retail browser leg: ~15 min/run** (2026-10-08: 16:30 → 16:45 for 6 sellers
+### GPU hunt (2x/day)
+- **Retail browser leg: ~15 min/run** (2026-10-08: one run took ~15 min for 6 sellers
   + Craigslist). 2x/day = ~30 min/day of browser time.
-- **48 runs over 24 days (Sep 14 → Oct 8): ZERO qualifying finds from the
-  retail leg.** All near-misses (e.g. local $500 RTX 4070 Super, exactly at
+- **Across the logged run history: ZERO qualifying finds from the
+  retail leg.** All near-misses (e.g. a local RTX 4070 Super, exactly at
   budget) came from the Facebook Marketplace CLI leg.
 - **FB CLI leg: 6 queries, all complete within ~1 min** (file mtimes
   23:27:xx UTC). Fast already; the 6 serial CLI invocations are fine.
@@ -66,18 +66,18 @@ failure patterns, and measured the fast tools directly.
 - The 20-min browser timebox in the cron def is good — partial committed runs
   beat timeouts.
 
-### Shoe watch (2x/day, 07:30 / 16:30)
+### Shoe watch (2x/day)
 - 6–8 sources checked live per run via 1–2 browser tasks.
-- **Amazon: ~20 straight runs bot-blocked**, still probed every run (the
+- **Amazon: bot-blocked on every recent run**, still probed every run (the
   anti-agent interstitial). Famous Footwear: Cloudflare-blocked most runs.
-- The 2E (3028816) is delisted from underarmour.com — every run re-confirms
+- The 2E is delisted from underarmour.com — every run re-confirms
   "search zero results / 404". Stable negative; the check is one search, cheap.
 - Variant-verification rule (Amazon colorway flip) is NECESSARY — it caught a
   real false positive (Pitch Gray → (002) flip). Not waste; keep.
 - `reported.json` doubles as a run log with per-run notes — excellent practice,
   keep it.
 
-### FOSS model watch (2x/day, 07:30 / 16:30)
+### FOSS model watch (2x/day)
 - Already the fast pattern: `browser.search` per-category queries +
   `browser.open` on promising pages. No live browser needed.
 - `seen_models.json` dedupes; per-run logs are compact. Nothing structurally
@@ -145,8 +145,8 @@ not wired into any hunt cron def. FOSS watch (news-driven) is the natural fit.
 ### Tier 2 — do next (small effort, structural payoff)
 4. **Two-tier hunt cadence.** Fast tier every run (`catalog-sweep.sh` +
    FB CLI + `browser.search`, ~2 min); full browser sweep 1x/day (morning) or
-   immediately when the fast tier surfaces a candidate. Evidence: 48 GPU runs,
-   0 retail-leg hits; shoe watch is a restock watch (restocks don't vanish in
+   immediately when the fast tier surfaces a candidate. Evidence: the GPU
+   hunt's logged history shows 0 retail-leg hits; shoe watch is a restock watch (restocks don't vanish in
    12h). **Needs Dennis's call** — the residual risk is a flash deal landing
    between full sweeps (most plausible on eBay auctions / Newegg refurbs).
 5. **Replace the inline PIL one-liner with `stamp-shot.py`.**
@@ -169,8 +169,21 @@ not wired into any hunt cron def. FOSS watch (news-driven) is the natural fit.
    the default.
 
 ### Deliberately NOT recommended
-- **Bypassing/ret
-...[truncated 2387 chars]
+- **Bypassing bot blocks — and retry-hammering blocked sources.**
+  Never route around a wall, and never re-probe a blocked source at
+  cadence hoping it forgets: skip it on the bot-block registry's
+  backoff and spend the browser where it can actually load. This is
+  also the skill's standing rule (SKILL.md: "Never bypass bot blocks").
+
+*[Repaired 2026-10-21. The original text of this section was lost
+before publication: a truncation baked into the source document on
+2026-10-09 shipped as a literal "[truncated 2387 chars]" marker
+where the passage stood. The surviving fragment — "Bypassing/ret…"
+— and the rule quoted above fix the first bullet's topic; its exact
+words, and any bullets that followed, are unrecoverable and are not
+reconstructed. The decisions actually taken are in "Dennis's call"
+below.]*
+
 ## Dennis's call (2026-10-09)
 - Hunts KEEP the twice-daily full browser sweeps. The flash-deal risk (eBay auctions, Newegg refurbs) is not acceptable — the data doesn't outweigh a missed deal.
 - The two-tier pattern (fast tier every run, full sweep 1x/day or on signal) is published as a documented option for other Muses to choose, not adopted here.
