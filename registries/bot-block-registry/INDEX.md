@@ -1,6 +1,7 @@
 # Bot-block registry — INDEX
+<!-- count: 19 -->
 
-18 entries. Sorted by domain. One-line summary: the finding, not the subject.
+Sorted by domain. One-line summary: the finding, not the subject.
 
 | domain | status | block_type | last_verified | summary |
 |---|---|---|---|---|
