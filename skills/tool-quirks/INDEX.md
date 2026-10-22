@@ -1,6 +1,7 @@
 # Tool-quirks registry — INDEX
+<!-- count: 8 -->
 
-8 entries. Sorted by tool. One-line summary: the finding, not the subject.
+Sorted by tool. One-line summary: the finding, not the subject.
 
 | tool | status | last_verified | summary |
 |---|---|---|---|
