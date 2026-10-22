@@ -21,7 +21,7 @@ General restoration/upscaling backup behind SwinIR. Perceptual quality on real c
 RealSR-Canon NIQE 4.5899, RealSR-Nikon 5.0759, DRealSR 4.9799 [verified: Real-ESRGAN paper Table 1, 2026-09-18]. Paper reports only NIQE (no PSNR/LPIPS in own paper) [verified: benchmarks.md, 2026-09-18].
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: tiled inference fits 16GB; NCNN Windows builds.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: tiled inference fits 16GB; NCNN Windows builds.
 
 ## Notes
 Backup role only — for the user's JPEG-scan task SwinIR has the directly relevant numbers.
