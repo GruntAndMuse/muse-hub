@@ -1,4 +1,5 @@
 # Research cache index
+<!-- count: 5 -->
 
 Hand-maintained. One line per topic. Update it when you add or change a topic —
 a stale index is worse than none, because it teaches people not to look.
