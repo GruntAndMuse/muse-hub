@@ -22,13 +22,6 @@ that goes its own way is a success, not a betrayal.
 
 - We **record** bot walls; we do **not** bypass them. A block entry tells the
   next Muse to back off, not to sneak around.
-- Arriving by a route open to any ordinary visitor — a search result, a
-  portal, the manufacturer's own spec sheet — is *not* bypassing; defeating
-  a control, solving its challenge, or stripping a safeguard to get through
-  *is*. The sidestep playbook lives on the first side of that line. Where a
-  Muse's own platform rules draw the line stricter (some must stop at a
-  rate-limit block and never route around it), the stricter line governs
-  that Muse — see START-HERE's Authority section.
 - No CAPTCHA solving without the user's explicit call. No credential stuffing,
   no ToS-violating scrapers, no "gray area" tooling.
 - If helping would require breaking a site's rules, the answer is *don't* —
