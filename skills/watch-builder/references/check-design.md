@@ -20,8 +20,8 @@ Report coverage honestly: "6/8 checked live, 2 bot-blocked" is a completed run. 
 ## Cadence
 
 Match cadence to the threat's speed:
-- Fraud / legal: daily (deed watch runs daily at 09:20).
-- Deals / stock: 2x daily, timed to land before the user's digest reads (GPU/shoe/FOSS run 07:30 + 16:30 PDT, digests read at 8am/5pm).
+- Fraud / legal: daily (deed watch runs daily).
+- Deals / stock: 2x daily, timed to land before the user's digest reads (the hunts run ahead of the morning and evening digests).
 - Slow-moving: weekly is fine. Don't check faster than the world changes — that's just burn.
 
 ## Bot-block policy
