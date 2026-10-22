@@ -25,7 +25,7 @@ Every cron definition names what happens when a step fails:
 - The user explicitly asked for a daily confirmation → deliver it every run, in the format they asked for.
 - Otherwise → surface only what is genuinely new and worth their attention. A clean run with nothing found ends quietly: log it, say nothing.
 - Routine findings wait for the digest. Message immediately only for a genuinely time-sensitive item with clear evidence it will be gone before the next check.
-- **Deduplicate alerts.** Compute a stable event fingerprint (e.g. `UAL1513-delay-60plus-20261012`), persist it BEFORE messaging, and never message the same fingerprint twice.
+- **Deduplicate alerts.** Compute a stable event fingerprint (e.g. `AS719-delay-60plus-20261103`), persist it BEFORE messaging, and never message the same fingerprint twice.
 
 **4. Make every run idempotent.**
 The same job firing twice must not corrupt state: check state files before writing, use append-only run logs, key deliveries by fingerprint. Each check finishes, has request and execution timeouts, and avoids overlap with its own previous run.
