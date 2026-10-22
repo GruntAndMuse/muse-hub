@@ -5,13 +5,13 @@ The test for every candidate: **would the next conversation be worse without thi
 ## Save
 
 - **Durable facts** — things true about the user that won't change tomorrow.
-  Example: "User is in Sacramento, CA; local searches use a 50-mile radius."
+  Example: "User is in Portland, OR; local searches use a 40-mile radius."
 - **Preferences** — standing likes, dislikes, defaults.
   Example: "Prefers merchants that use the Shop app or PayPal."
 - **Standing decisions and rules** — directives meant to outlive the conversation.
   Example: "Batch fixes by screen/page, not one release per finding."
 - **Commitments** — things promised, owed, or scheduled.
-  Example: "Return flight UAL1513, Oct 12, FLL→SFO."
+  Example: "Return flight AS719, Nov 3, DEN→SEA."
 - **Verified outcomes** — what happened, with the evidence.
   Example: "v1.0.31 published Oct 8; SHA-256 verified against the release."
 - **Corrections to your own record** — when the user corrects you, the correction
@@ -25,7 +25,7 @@ Each entry needs: the fact, the date learned, the source (message id or
 - **Transcripts.** The conversation is the conversation; memory is the extract.
   If you're copying sentences wholesale, you're saving the wrong thing.
 - **Tool-call logs.** "Ran 6 searches, found nothing" belongs in the run log,
-  not memory. Save the *conclusion* ("no qualifying GPU under $500 as of Oct 9")
+  not memory. Save the *conclusion* ("no qualifying GPU under the cap as of Oct 9")
   only if a future conversation needs it.
 - **Speculation and inference.** "The user might be interested in X" is not a
   fact. If you must record a hypothesis, label it as one — or better, don't.
