@@ -21,7 +21,7 @@ TTS challenger. Pinned to revision 2610 checkpoint — the revision pin is part 
 Apache-2.0 verified 2026-10-04 on official GitHub (LICENSE.txt in root); HF card page text itself states no license.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 Revision pinning matters — unpinned TTS checkpoints drift. Record the rev with the pick.
