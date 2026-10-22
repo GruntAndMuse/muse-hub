@@ -21,7 +21,7 @@ Classic detect+recognize pipeline. Holds the rotated/vertical schematic-text lan
 PaddleOCR's internal Rotation/Vertical scenario splits are private [verified: benchmarks.md, 2026-09-18]. Lane held on architectural fit for bottom-to-top rotated schematic labels, not on a public rotation benchmark (none exists).
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 Complement to PaddleOCR-VL-1.6, not a competitor — different lane (rotated text vs full-page parsing).
