@@ -21,7 +21,7 @@ Doc-OCR challenger from DeepSeek. Cleaner license story than v1.
 Apache 2.0 verified 2026-09-25 on the official GitHub repo (LICENSE.txt in root); the HF card page text still states no license, as with v1.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 v1's license was MIT-per-third-party-only with a silent official card — v2 fixes this with an explicit repo license.
