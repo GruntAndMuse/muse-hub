@@ -21,7 +21,7 @@ Bigger-context MoE coding pick. Slower than Devstral, wider context window.
 51.6% SWE-bench Verified (OpenHands harness) [verified: watch benchmarks].
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: IQ3/IQ4 quants ~11-16GB or Q4_K_M partial offload.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: IQ3/IQ4 quants ~11-16GB or Q4_K_M partial offload.
 
 ## Notes
 Secondary pick — Devstral leads the lane on quality-per-VRAM.
