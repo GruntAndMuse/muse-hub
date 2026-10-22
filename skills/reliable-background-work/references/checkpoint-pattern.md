@@ -25,8 +25,8 @@ After each of the 4 searches, BEFORE starting the next search, write:
 {
   "run_date": "2026-10-09",
   "searches": [
-    {"name": "PERSON FULLNAME",   "count": 16, "doc_numbers": ["202510020841", "..."], "screenshot": "files/deed-watch-YYYY-MM-DD-person.png"},
-    {"name": "PERSON FULLNAME M", "count": 30, "doc_numbers": ["..."],                "screenshot": "files/deed-watch-2026-10-09-person-m.png"}
+    {"name": "PERSON FULLNAME",   "count": 7, "doc_numbers": ["202401150001", "..."], "screenshot": "files/deed-watch-YYYY-MM-DD-person.png"},
+    {"name": "PERSON FULLNAME M", "count": 12, "doc_numbers": ["..."],                "screenshot": "files/deed-watch-2026-10-09-person-m.png"}
   ],
   "completed_steps": ["person", "person-m"],
   "remaining_steps": ["person2", "person2-b"],
