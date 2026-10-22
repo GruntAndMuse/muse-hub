@@ -206,7 +206,7 @@ elif [ -f "$HOME/workspace/freecad/SETUP.md" ]; then
         "Follow ~/workspace/freecad/SETUP.md to install FreeCAD 1.1.4 (documented, reproducible)."
 else
     fail "freecadcmd not found at ~/workspace/freecad/freecadcmd" \
-        "Run ./install.sh from the hub repo first (it stages the FreeCAD playbook), then follow ~/workspace/freecad/SETUP.md."
+        "Stage the FreeCAD playbook first (START-HERE.md step 5 copies SETUP.md to ~/workspace/freecad/), then follow ~/workspace/freecad/SETUP.md."
 fi
 echo ""
 
