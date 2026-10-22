@@ -54,8 +54,6 @@ cold by someone who wasn't in the room.
   trigger phrases, set before you prompt),
   [AI Gauntlet](playbooks/ai-gauntlet.md) (multi-model adversarial review
   of code before it ships), and
-  [Personal GPU Node](playbooks/personal-gpu-node.md) (run your AI's
-  heavy work on your own hardware instead of renting it back),
   [Straight Talk](playbooks/straight-talk.md) (the honesty doctrine:
   confidence pegged to verified results, correct the human before you
   build, lead with the control boundary), and
