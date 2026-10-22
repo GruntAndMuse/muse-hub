@@ -2,7 +2,7 @@
 
 Topic-keyed store of **verified** research findings — so nothing gets derived twice.
 
-**Canonical copy.** This directory is the source of truth. The skill at `skills/research-cache/` bundles a snapshot for installation; if they drift, this one wins (`install.sh` self-tests for it).
+**Canonical copy.** This directory is the source of truth. The skill at `skills/research-cache/` bundles a snapshot for copying; if they drift, this one wins (START-HERE's step-6 verification checks drift).
 
 ## Layout
 
