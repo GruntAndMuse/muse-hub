@@ -27,6 +27,10 @@ error at write time. Anything a later step needs must live in the workspace.
 ## Invalidation triggers
 - VM image / runtime change (tmp handling may differ per environment)
 
+## See also
+- Full machine profile: `~/workspace/muse-hub/research/capability-manifest.md` (OS, RAM/disk, installed software, persistence model, all probed 2026-10-09). This entry's quirk is one row of that manifest.
+
 ## History
 - 2026-10-09: entry created from AGENTS.md one-liner. Single observation —
   confidence medium until independently re-observed.
+- 2026-10-09: cross-linked to the full capability manifest (canonical machine profile).
