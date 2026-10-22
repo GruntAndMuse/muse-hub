@@ -6,7 +6,7 @@ confidence: high
 first_observed: 2026-10-04
 last_verified: 2026-10-09
 review_after_days: 90
-used_by: bahamas-cruise return flight UAL1513 monitoring
+used_by: return-flight monitoring for personal travel
 ---
 
 # flightaware
@@ -35,8 +35,8 @@ show real product judgment.
 - A failed read is not evidence nothing changed — keep monitoring.
 
 ## Evidence
-- 2026-10-04 through 2026-10-09: UAL1513 FLL→SFO Oct 12 monitoring; baseline
-  8:00 AM EDT → 11:05 AM PDT recorded. (travel notes)
+- 2026-10-04 through 2026-10-09: return-flight monitoring; baseline
+  departure and arrival times recorded. (travel notes)
 
 ## History
 - 2026-10-09: entry created.
