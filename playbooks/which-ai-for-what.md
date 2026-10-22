@@ -9,7 +9,7 @@
 |----|----------|-------|
 | Perplexity | Current events, research with citations | Search-grounded answers, sources included |
 | DeepSeek | Coding, math, reasoning-heavy tasks | Strong reasoning, free tier generous |
-| Gemini Pro | Multimodal (images, docs), long context | gruntandmuse@gmail.com Pro account |
+| Gemini Pro | Multimodal (images, docs), long context | the hub owner's Gemini Pro account |
 | ChatGPT | General knowledge, brainstorming, writing | Free tier; broadest training |
 | DuckAI | Quick private queries | No account, anonymous by design |
 
