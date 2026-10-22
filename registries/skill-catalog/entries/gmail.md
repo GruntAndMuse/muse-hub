@@ -6,7 +6,7 @@ confidence: high
 first_observed: 2026-09-23
 last_verified: 2026-10-09
 review_after_days: 90
-used_by: daily connector use, OTP/code lookup flows
+used_by: daily connector use
 ---
 
 # gmail
