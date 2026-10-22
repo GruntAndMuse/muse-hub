@@ -2,17 +2,21 @@
 
 ## The deed fraud watch — the reference implementation
 
-**Threat:** a fraudulent grant deed recorded against the house. Slow-moving, high-stakes, legal-grade evidence needed.
+*(Fictionalized example: the watch below is invented — a property in
+Marlow County, a fictional recorder's office, invented parameters. The
+structure is the lesson; the specifics are not a real household's.)*
+
+**Threat:** a fraudulent grant deed recorded against the property. Slow-moving, high-stakes, legal-grade evidence needed.
 
 - **Baseline:** `hidden_files/baseline.md` — every known legitimate document (doc #, date, grantor, grantee, type), the working search parameters, the site's literal-search quirk, known noise (name-token false positives), and a one-sentence alert rule. Grew over the first week as pre-existing recordings surfaced — each added with a dated "auto-surfaced, NOT a new filing" note.
-- **Method:** 4 exact-name searches on the county recorder's public index, daily. The exact-method lesson is canonical here: the simple search flooded with hundreds of noise rows; the exact-name refinement made the check real.
-- **Evidence:** 4 timestamped screenshots per run (results tables, count headers visible), PIL timestamp banners burned in, transcription fallback to `hidden_files/deed-watch-YYYY-MM-DD-data.txt` when capture fails.
+- **Method:** 3 exact-name searches on the county recorder's public index, on a set cadence. The exact-method lesson is canonical here: the simple search flooded with hundreds of noise rows; the exact-name refinement made the check real.
+- **Evidence:** one timestamped screenshot per search (results tables, count headers visible), timestamp banners burned in, transcription fallback to `hidden_files/deed-watch-YYYY-MM-DD-data.txt` when capture fails.
 - **Alert:** any doc number not in the baseline = immediate message with doc #, date, type, parties. Single-name grantee or unknown grantor = highest suspicion. Clean runs get one digest line.
 - **Why it's the reference:** tightest baseline, hardest evidence bar, clearest alert rule. When in doubt, build it like the deed watch.
 
 ## The GPU hunt — the contrast
 
-**Target:** RTX 40-series under $500 all-in (plus per-model high-VRAM budgets). Fast-moving, deal-driven, evidence is for the digest not the courtroom.
+**Target:** a current GPU generation under a fixed all-in cap (plus per-model high-VRAM budgets). Fast-moving, deal-driven, evidence is for the digest not the courtroom.
 
 - **Baseline:** the target spec itself — model list, all-in budgets (card + shipping + protection plan combined, never item price alone), seller rules (reputable retailers; eBay only with protection plan + good reputation). No document inventory — the "baseline" is the price bar.
 - **Method:** 6 retail sellers + Craigslist + Facebook Marketplace CLI, 2x daily. Two legs with different tools: fast CLI leg (Marketplace, ~1 min) + slow browser leg (~15 min). Timeboxed: browser leg gets ~20 min, then commit partial.
