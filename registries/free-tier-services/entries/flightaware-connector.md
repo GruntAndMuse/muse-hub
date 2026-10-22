@@ -31,7 +31,7 @@ bands, airport activity.
 - A failed read is not evidence nothing changed.
 
 ## Evidence
-- 2026-10-04 through 2026-10-09: UAL1513 monitoring. (travel notes)
+- 2026-10-04 through 2026-10-09: return-flight monitoring. (travel notes)
 
 ## History
 - 2026-10-09: entry created.
