@@ -21,7 +21,7 @@ Doc-OCR challenger. License clean on both code and weights.
 License verified on official HF card LICENSE section + repo [verified: seen_models.json].
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 Seeded from watch history; exact first-log date approximate (watch seeding era).
