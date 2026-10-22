@@ -1,10 +1,11 @@
 # Free-tier services registry — INDEX
+<!-- count: 8 -->
 
-8 entries. Sorted by service. One-line summary: the finding, not the subject.
+Sorted by service. One-line summary: the finding, not the subject.
 
 | service | category | tier_status | last_verified | summary |
 |---|---|---|---|---|
-| cloudflare | network | needs-verification | 2026-10-09 | Cloudflare was proposed for Email Routing (security@gruntandmuse.com |
+| cloudflare | network | needs-verification | 2026-10-09 | Cloudflare was proposed for Email Routing (forwarding for a security |
 | facebook-cli-surfaces | social-api | bundled | 2026-10-09 | The `facebook-cli` tool surfaces (Marketplace search, posts, friends, groups) |
 | flightaware-connector | flight-data | bundled | 2026-10-09 | FlightAware AeroAPI via the bundled `flightaware` CLI: flight status, delays, |
 | github | version-control | free-tier | 2026-10-09 | Git hosting, issue/PR tracking, Releases, and Actions CI. The home of all |
