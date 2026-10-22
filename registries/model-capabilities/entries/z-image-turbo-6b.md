@@ -21,7 +21,7 @@ Fast high-quality text-to-image. Speed lane pick.
 GenEval 0.82 [verified: watch benchmarks] vs Qwen-Image 0.91 — Z-Image wins on speed, Qwen-Image on quality/complexity.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits comfortably in 16GB; sub-second at 8 steps.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits comfortably in 16GB; sub-second at 8 steps.
 
 ## Notes
 Pair with Qwen-Image: fast drafts on Z-Image-Turbo, final/complex renders on Qwen-Image.
