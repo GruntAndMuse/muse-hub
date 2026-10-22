@@ -21,7 +21,7 @@ The only permissive video+AUDIO model on the watch. Logged 2026-10-06 PM.
 MIT verified 2026-10-06 on official GitHub (LICENSE file in root); multiple secondary sources confirm MIT covers code + weights.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 Adjacent to the video lane rather than a direct challenger — video+audio in one permissive package is unique on the watch.
