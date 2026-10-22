@@ -21,7 +21,7 @@ Doc-OCR challenger (formerly NaviDC-OCR). ParseBench third-party datum recorded 
 ParseBench third-party datum logged 2026-10-07 PM run [verified: model-checks.log].
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 License caveat: Apache 2.0 declared on README badge + HF metadata, but a third-party audit found no actual LICENSE text in the repo tree — intent looks clear, verify before any commercial-adjacent use.
