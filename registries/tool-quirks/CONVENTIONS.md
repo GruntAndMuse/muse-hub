@@ -71,4 +71,6 @@ not copied.
    existing tool entry.
 3. Add/update the INDEX.md row (sorted by tool).
 4. Run `registry-check.py` — it must pass.
-5. Ship it: accumulates here; migrates to the public hub repo with history.
+5. Ship it: the canonical home is the public hub repo — `PUBLICATION.md`
+   at the hub root is the single source for where this registry lives
+   and how it publishes. MIT licensed, PRs welcome.
