@@ -21,7 +21,7 @@ TTS: 23+ languages with voice cloning. Tiny enough to run anywhere.
 Demucs (MIT) covers stem separation alongside it [verified: watch notes].
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: 0.5B, tiny.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: 0.5B, tiny.
 
 ## Notes
 PocketTTS (Kyutai, Jan 2026) was excluded 2026-10-09: weights CC-BY-4.0 gated behind HF access agreement — violates the no-accounts rule. Chatterbox keeps the lane.
