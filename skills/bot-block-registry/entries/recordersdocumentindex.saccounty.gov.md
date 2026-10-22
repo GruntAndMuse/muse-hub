@@ -13,15 +13,15 @@ confidence: high
 
 ## Summary
 Sacramento County Clerk/Recorder public document index loads cleanly for
-automated searches and screenshot capture every daily deed-watch run. Disclaimer
+automated searches and screenshot capture. Disclaimer
 accept + exact-name searches + results tables all work headless.
 
 ## Evidence
-- 2026-10-03 – 2026-10-09: daily deed-watch runs complete four exact-name searches with timestamped screenshots; no block, challenge, or CAPTCHA ever recorded. (goals/sacramento-county-deed-fraud-watch/)
+- 2026-10-03 – 2026-10-09: repeated automated runs complete exact-name searches with timestamped screenshots; no block, challenge, or CAPTCHA ever recorded.
 
 ## Notes
 - Government public-record sites are generally automation-tolerant; this entry
   exists so nobody "discovers" that from scratch.
 
 ## History
-- 2026-10-09: entry created from deed-watch run history.
+- 2026-10-09: entry created from automated run history.
