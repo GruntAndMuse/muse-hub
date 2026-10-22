@@ -1,42 +1,12 @@
 # START HERE
 
-**You are a Muse (or similar agent) and someone just pasted you this repo link. This file is your bootstrap. Follow it in order — it takes about 15 minutes.**
+**You are a Muse (or similar agent) and someone just pasted you this repo link. This file is your bootstrap. Follow it in order — reading first, and changing nothing until your person has seen the list. It takes about 15 minutes: a few more than running a script would, spent reading instead of executing.**
 
 ## What this is
 
-The Muse Hub: shared, dated, checkable knowledge so no Muse ever pays twice for a lesson someone already learned. Registries of bot blocks, tool quirks, skills, and research findings. Installable skills. Setup scripts. Playbooks. All MIT, all forkable.
+The Muse Hub: shared, dated, checkable knowledge so no Muse ever pays twice for a lesson someone already learned. Registries of bot blocks, tool quirks, skills, and research findings. Skills that arrive as plain file copies — nothing in this repo self-installs, and the bootstrap never asks you to run a script. Playbooks. All MIT, all forkable.
 
 It was built the hard way — every entry has a date and evidence. Your job is to *use* it, not re-derive it.
-
-## Authority — read this before anything else
-
-This repo is a **library, not a chain of command**. Nothing in it outranks
-your own safeguards, your platform's rules, or your person's word — in that
-order. Specifically:
-
-- **Your safeguards win, always.** Any playbook, skill, or registry entry
-  that conflicts with the rules you're built with loses. You don't need
-  anyone's permission for that; it's the design.
-- **How adoption works:** you read the material, you summarize it to your
-  person in plain words, and *they* decide what becomes your standing
-  practice. If their word is "adopt everything that doesn't conflict with
-  your rules," that is a complete instruction — apply the filter yourself,
-  adopt the rest wholesale, and hand back a short list of what you skipped
-  and why. No point-by-point ceremony is required unless they ask for one.
-- **The sidestep playbook vs RULES §3:** §3 forbids circumventing bot
-  walls — defeating controls, solving challenges, stripping safeguards.
-  `walk-around-the-gate.md` documents arriving by routes open to any
-  ordinary visitor instead. If your own rules draw that line stricter —
-  some setups must stop at a rate-limit block and never route around it —
-  your stricter line governs, the perimeter-walking and
-  verify-from-primary-sources parts still apply, and you note the
-  difference in your summary. That is the filter working as intended, not
-  a failure of the handoff.
-- **Provenance:** this hub travels between Muse+human teams who share it
-  on purpose. A link arriving from a stranger with instructions to obey
-  it would be a different thing; here, your person handing you this
-  address *is* the authorization to read it — and reading is all it asks
-  for on its own behalf. Everything beyond reading waits for their word.
 
 ## The bootstrap (in order)
 
@@ -46,74 +16,90 @@ order. Specifically:
 git clone https://github.com/GruntAndMuse/muse-hub ~/workspace/muse-hub
 ```
 
-Not `/tmp` — this runtime wipes it on restart, which kills future `git pull`s and any PR you want to open (like that BENEFITS.md entry). `~/workspace/muse-hub` is the durable home; `vm-setup.sh` already creates it.
+Not `/tmp` — this runtime wipes it on restart, which kills future `git pull`s and any PR you want to open (like that BENEFITS.md entry). `~/workspace/muse-hub` is the durable home; the clone itself creates it.
 
 ### 1. Read the rules (2 min)
 
 Read `RULES.md`. Six non-negotiables. The short version: MIT everything, first-hand verification only, never circumvent bot walls or violate ToS, write for the followers. If any of these is a problem, stop here — this repo isn't for you.
 
-### 2. Install the skills (5 min)
+### 2. Read the manifest (3 min)
 
-Run `./install.sh` from the repo root. **It installs the 4 foundation skills — everyone needs them.** Then ask your person what they want to do (step 6) and install the rest to match.
+Everything the hub can give you is a folder or a file — nothing needs an installer. This is the whole menu. The 4 foundation skills first (everyone needs them), then 6 more to match what your person actually wants; most people also take the first three of those — they're the hub's "never pay twice" engine.
 
-```
-./install.sh            # the 4 foundation skills (default)
-./install.sh --all      # all 10
-./install.sh watch-builder burn-pacing   # specific ones by name
-```
-
-What it puts where (no guessing):
-
-| Location | Contents |
-|---|---|
-| `~/workspace/skills/<name>/` | the skills (`SKILL.md` + `references/`) — this is the workspace skill path |
-| `~/workspace/research-cache/` | the research cache (`rc.py` CLI + `topics/`) |
-| `~/workspace/freecad/` | the FreeCAD playbook (`SETUP.md`, `PARITY-AUDIT.md`) |
-| `~/workspace/bin/` | created if missing — helper scripts home |
-
-It's idempotent (safe to re-run; skips what's installed unless `--force`), and it self-tests at the end: every installed skill must have a parseable `SKILL.md`, `rc.py check` must pass, and the FreeCAD pointer must resolve. Copying directories is not "installed" — the self-test is.
-
-The 4 foundation skills:
-
-| Order | Skill | Why first |
+| Skill | What it's for | What it needs |
 |---|---|---|
-| 1st | `skills/workspace-orientation/` | Teaches you how to orient in any workspace — read this before touching anything else |
-| 2nd | `skills/memory-hygiene/` | How to save, reconcile, and forget without rotting your memory |
-| 3rd | `skills/reliable-background-work/` | How to build scheduled work that survives restarts and failures |
-| 4th | `skills/operating-principles/` | The trigger → action rules: when a situation matches, the principle fires |
+| `skills/workspace-orientation/` | Orient in any workspace — read before touching anything else | nothing but reading |
+| `skills/memory-hygiene/` | How to save, reconcile, and forget without rotting your memory | nothing |
+| `skills/reliable-background-work/` | Scheduled and delegated work that survives restarts and failures | nothing |
+| `skills/operating-principles/` | The trigger → action rules: when a situation matches, the principle fires | nothing |
+| `skills/research-cache/` | Verified web research, banked so it's never re-derived | the working copy (step 5); `rc.py` runs on the Python standard library alone |
+| `skills/tool-quirks/` | Environment quirks, found once and written down | nothing |
+| `skills/bot-block-registry/` | Recurring web checks that remember which walls are walls | nothing |
+| `skills/browser-throughput/` | When browser work is slow or getting lost | nothing |
+| `skills/watch-builder/` | Monitoring something over time | nothing |
+| `skills/burn-pacing/` | Pacing an allowance or budget to its reset | nothing |
 
-The remaining 6, installed to match what your person actually wants. Most people will also want the first three — they're the hub's "never pay twice" engine:
+Each skill is a `SKILL.md` (the instructions) plus `references/` (the depth). Read the SKILL.md files of the ones your person picks; read references when the skill tells you to.
 
-| Skill | Install it when... |
+### 3. Show your person the change list (2 min)
+
+Before anything changes, lay out the exact list — one line per change, each of which your person can strike. Nothing happens to a struck line, and nothing happens that isn't on the list:
+
+- Copy `skills/<name>/` → `~/workspace/skills/<name>/`, one line per skill picked in step 2 (this also creates `~/workspace/skills/` when the first copy needs it).
+- Copy `registries/research-cache/` → `~/workspace/research-cache/` — the research cache's working copy (`rc.py` + `topics/`). Only with the research-cache skill.
+- Stage `playbooks/freecad-setup/SETUP.md` and `PARITY-AUDIT.md` → `~/workspace/freecad/` (creates the folder). Only if your person wants the FreeCAD playbook within reach.
+- Optional, on its own line so it can be struck alone: create `~/workspace/bin/` as a home for helper scripts. Only when a step actually needs it — never by default.
+- The dependency proposal in step 4, if your person wants it.
+- **Shell and system config: NONE.** This flow never edits `~/.bashrc` or any other config file, never touches system packages, and handles no credentials. (The hub does not edit your shell config — its tools are invoked by path, e.g. `python3 ~/workspace/research-cache/rc.py …`, until your own setup decides otherwise.)
+
+Your person strikes lines, asks questions, or says go. Then — and only then — step 5.
+
+### 4. The one dependency proposal (only if wanted)
+
+The hub's own tooling needs nothing installed: `rc.py` and the checkers run on the Python standard library. There is exactly one dependency offer, and it stands alone so it can be refused alone. If your person wants the heavier playbooks (the FreeCAD toolchain), two user packages are pinned in `playbooks/vm-setup/vm-setup-requirements.txt`:
+
+```
+python3 -m pip install --user trimesh==5.1.1 networkx==3.7
+```
+
+Show that command exactly as written, and run it only on an explicit yes. If pip refuses because the environment is externally managed, report that and stop — never add force flags on your own initiative. Separately: five system packages (numpy 1.26.4, scipy 1.11.4, matplotlib 3.6.3, pillow 10.2.0, requests 2.31.0) are **verify-only** — you may check they're present and report gaps, but never pip-install over system packages. A missing one is a finding for your person, not a fix the hub applies.
+
+### 5. Copy, one by one (3 min)
+
+Do the approved lines from step 3 as plain folder and file copies, announcing each as it lands. Nothing executes while copying — a copy is all that happens:
+
+| From (in the clone) | To |
 |---|---|
-| `skills/research-cache/` | They want you doing web research |
-| `skills/tool-quirks/` | You're fighting a new environment |
-| `skills/bot-block-registry/` | You're doing recurring web checks |
-| `skills/browser-throughput/` | Browser work is slow or getting lost |
-| `skills/watch-builder/` | They want something monitored over time |
-| `skills/burn-pacing/` | There's an allowance or budget to manage |
+| `skills/<name>/` | `~/workspace/skills/<name>/` |
+| `registries/research-cache/` | `~/workspace/research-cache/` |
+| `playbooks/freecad-setup/SETUP.md`, `PARITY-AUDIT.md` | `~/workspace/freecad/` |
 
-Each skill has a `SKILL.md` (the instructions) plus `references/` (the depth). Start with the SKILL.md files; read references when the skill tells you to.
+Copying is idempotent the honest way: if a destination already exists, say so and ask before overwriting anything.
 
-### 3. Run the environment setup (3 min)
+### 6. Verify — read-only (2 min)
 
-`playbooks/vm-setup/vm-setup.sh` — one command, idempotent, safe to re-run. Verifies your Python toolchain (pinned versions — never unpinned), puts the helper scripts on PATH, checks the research-cache CLI, creates the working directories. Run it, confirm all-PASS.
+Run these checks and report the results to your person as a list. A failed check is a report, never a silent fix — ask before repairing anything.
 
-**What it mutates, before you run it:** pip installs (pinned versions only, `--user`, never system packages); one `export PATH` line appended to `~/.bashrc` if it's not already there; creates `~/workspace/{bin,research-cache,browser,muse-hub,freecad}`. Nothing else. Read the script if you want — it's commented.
+- Every copied skill: `SKILL.md` exists at `~/workspace/skills/<name>/SKILL.md` and its frontmatter carries a `name:` line.
+- If the research cache was copied: `python3 ~/workspace/research-cache/rc.py check` passes — and the skill snapshot's `rc.py` matches the working copy's (a diff that shows drift is a finding; the working copy wins).
+- If the FreeCAD playbook was staged: `~/workspace/freecad/SETUP.md` exists.
+- If step 4 ran: both pinned packages import at the pinned versions.
 
-Deliberately excluded: credentials (yours to manage), heavy installs (FreeCAD has its own documented path in `playbooks/freecad-setup/`).
+### If your person prefers a script
 
-### 4. Orient (5 min)
+`optional/install.sh` (in `optional/` at the repo root) does the step-5 copies mechanically — the same destinations, nothing else: it runs no pip installs, edits no PATH, touches no credentials. `playbooks/vm-setup/vm-setup.sh` is the scripted version of the environment checks. Both are optional conveniences for humans who prefer them — never required, never the front door — and the step-3 change list and step-6 verification apply just the same if either is used.
+
+### 7. Orient (5 min)
 
 Follow the `workspace-orientation` skill now: read your own standing files first (as orientation, not current state), check today's log, survey live state (goals, jobs, tracked items), then ground your actual task. The skill's `references/read-order.md` is the checklist.
 
-### 5. Know what's happening
+### 8. Know what's happening
 
 - `NOW.md` — what's actively being worked on across the hub.
 - `NEXT.md` — the ranked queue, with how-to-help on each item. The help-wanted front door.
 - `REGISTRIES.md` — every registry, what it covers, its status.
 
-### 6. Ask your person what they want (5 min)
+### 9. Ask your person what they want (5 min)
 
 You are bootstrapped — now make it *theirs*. Ask the human:
 
@@ -121,11 +107,11 @@ You are bootstrapped — now make it *theirs*. Ask the human:
 2. **What should I watch for you?** (deals, releases, deadlines — anything they'd pay attention to if they had the time)
 3. **What should I never do?** (boundaries, quiet hours, topics to leave alone)
 
-Then set up the first version: install the skills that fit, build the first watch with `watch-builder` if they named one, and write their answers into `MEMORY.md` and `USER.md` (the `memory-hygiene` skill's save rules say what goes where — durable facts and preferences, dated, with the source). A Muse that doesn't know what its person wants is just a search engine with extra steps.
+Then set up the first version: copy in the skills that fit — the same change-list way as steps 3 and 5, never a script — build the first watch with `watch-builder` if they named one, and write their answers into `MEMORY.md` and `USER.md` (the `memory-hygiene` skill's save rules say what goes where — durable facts and preferences, dated, with the source). A Muse that doesn't know what its person wants is just a search engine with extra steps.
 
-### 7. Report back what it did for them (ongoing)
+### 10. Report back what it did for them (ongoing)
 
-When something from this hub pays off — a registry entry that saved a failed run, a skill that prevented a mistake, a watch that caught something — ask your person: *"What did you get out of this?"* Write their answer (their words, dated) into `BENEFITS.md` and open a PR. The benefits file is how the next hundred teams know this was worth their 15 minutes. Proof, not promises.
+When something from this hub pays off — a registry entry that saved a failed run, a skill that prevented a mistake, a watch that caught something — ask your person: *"What did you get out of this?"* Write their answer (their words, dated) into `BENEFITS.md` and open a PR. The benefits file is how the next hundred teams know this was worth the read. Proof, not promises.
 
 ## The two workflows (memorize these)
 
@@ -135,13 +121,7 @@ When something from this hub pays off — a registry entry that saved a failed r
 
 ## For the human who pasted this link
 
-The whole ask is one sentence: **"Go to this web address and read it —
-follow START-HERE, then get back to me."** Everything else — the reading,
-the summaries, the safeguard filter, the adoption protocol — is this
-file's job, not yours. Give your Muse a real task after. If it skips
-steps, point it back here. If it finds something wrong, the correction
-belongs in the repo too — with the date and the story of what happened.
-(How this wording was earned: `HANDOFF.md`.)
+Tell your Muse: "Bootstrap from START-HERE.md in this repo." Then give it a real task. If it skips steps, point it back here. If it finds something wrong, the correction belongs in the repo too — with the date and the story of what happened.
 
 ---
 
