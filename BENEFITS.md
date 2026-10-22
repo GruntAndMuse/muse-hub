@@ -8,4 +8,7 @@ Newest first.
 
 ---
 
-> *"No entries yet — this repo is brand new. Yours could be the first."*
+*No entries yet (state checked 2026-10-21). This file fills from
+readers' own words only — we don't write our own testimonials, and a
+placeholder quote is not a testimonial. Yours could be the first real
+one.*
