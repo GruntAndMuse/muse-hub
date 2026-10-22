@@ -25,6 +25,34 @@ note, a reproduced failure. That is evidence.
 - **Inference is allowed, hiding it isn't.** Label it `[inference
   YYYY-MM-DD]`. An unlabeled claim is a lie.
 
+## No self-contradiction (2026-10-21)
+
+The hub must never assert a fact about itself that its own tree
+contradicts. Three mechanisms, in order of preference:
+
+- **Generate, don't state.** A count, total, or list the tree can
+  compute is produced by tooling, never typed into prose. A registry
+  INDEX carries its count as a machine stamp (`<!-- count: N -->`),
+  written by its checker's stamp mode; the checker's prose-count leg
+  recomputes the count on every run and fails on any mismatch —
+  including a bare "N entries" sentence in an INDEX or README.
+- **Point, don't repeat.** A fact lives in exactly one file; every
+  other file links to it. Registry counts live in the registries'
+  INDEX stamps — not in NOW.md, not in REGISTRIES.md, not in any
+  README.
+- **Drop, don't risk.** A number or claim that adds no value is
+  deleted, not corrected. A corrected hand-typed fact rots at the
+  same rate as a false one; only a generated or pointed fact stays
+  true by construction.
+
+Cautionary tale, from the 2026-10-21 audit: the skill-catalog INDEX
+said "88 entries" over 90 entry files (a whole entry's row was
+missing), the bot-block INDEX said "18 entries" over 19, and NOW.md
+repeated the 88 while saying 19 for bot-block — the hub disagreed
+with itself in public, and every checker was green, because the
+checkers synced rows to files but never read the prose. The
+prose-count leg exists because of that night.
+
 ## Status lifecycle (all registries)
 
 ```
@@ -50,8 +78,10 @@ Transitions require: the check itself, the date, the source, a History line.
 - One entry per thing (domain / tool / topic — per-registry CONVENTIONS
   defines the unit).
 - Filename slug == frontmatter identity field. The checker enforces this.
-- `INDEX.md` hand-maintained, sorted, one-line summaries that state the
-  *finding*, not the subject. Checker enforces INDEX ↔ entries sync both ways.
+- `INDEX.md` rows and summaries hand-maintained, sorted, one-line
+  summaries that state the *finding*, not the subject. Checker enforces
+  INDEX ↔ entries sync both ways. The INDEX's *count* is not
+  hand-maintained: it is a machine stamp (see No self-contradiction).
 
 ## Staleness
 
@@ -75,8 +105,8 @@ Every entry carries `review_after_days`:
 ## License
 
 MIT, everything, everywhere in this hub. Forkable by design. Contributions
-are PRs (once the public home exists); until then, edits here with full
-history preserved on migration.
+are PRs against the public repo (see PUBLICATION.md); staging edits land
+there in batches, history preserved.
 
 ## For registry authors
 
@@ -85,15 +115,12 @@ New registries slot into `registries/<name>/` with: `README.md`, `CONVENTIONS.md
 and a `registry-check.py` (or equivalent) enforcing the mechanical subset.
 Copy the tool-quirks registry as the scaffold.
 
-## Canonical sources and sync direction (2026-10-09)
+## The publish gate
 
-- `~/workspace/skills/` is the canonical source for all skills. Live cron
-  helpers and agents read from here.
-- Published/distributable skill copies (public repos, starter kits) sync FROM
-  `~/workspace/skills/`, one direction, at publish time. Never edit a
-  published copy in place and back-port — edit the live copy, then re-publish.
-- Before any publish: diff the published copy against the live copy.
-  Published-side diffs that aren't in the live tree are drift, not features —
-  reconcile before publishing.
-- Rationale: live is where the work happens; publishing is a build artifact.
-  The reverse direction would put a round trip between every fix and its use.
+A tree that has not passed `publish-gate.py` does not publish — no
+exceptions, no partial batches. The gate's receipt covers one exact
+tree and one exact manifest; anything that changes after the green
+run voids the receipt. Self-marked files, denylisted terms, and held
+content are findings the gate blocks on mechanically, not matters of
+reviewer attention. The full contract lives in PUBLICATION.md →
+"The publish gate".
