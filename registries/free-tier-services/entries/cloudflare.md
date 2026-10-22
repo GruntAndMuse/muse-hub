@@ -12,8 +12,8 @@ verified_by: security-md-discussion
 # Cloudflare (Email Routing / Tunnel)
 
 ## Summary
-Cloudflare was proposed for Email Routing (security@gruntandmuse.com
-forwarding) and Tunnel (future mesh-node dashboard). Whether the free tier
+Cloudflare was proposed for Email Routing (forwarding for a security
+contact address) and Tunnel (future mesh-node dashboard). Whether the free tier
 covers these uses is UNVERIFIED — this entry exists to prevent the assumption.
 
 ## Free tier details
@@ -23,11 +23,11 @@ with URL + date.
 
 ## Auth pattern
 Unknown until the setup is attempted. Expected: Cloudflare account + DNS
-control of gruntandmuse.com (Porkbun registrar).
+control of the domain, via its registrar.
 
 ## Good for
 Proposed: email forwarding for SECURITY.md contact addresses; private tunnel
-for dashboards. Both pending Dennis being home (DNS changes).
+for dashboards. Both pending setup (DNS changes).
 
 ## Limits / gotchas
 - The standing rule from the Oct 8 correction: "cost honesty pays" — the
