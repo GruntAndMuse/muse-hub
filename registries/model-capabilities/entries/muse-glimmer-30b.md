@@ -21,7 +21,7 @@ confidence: medium
 76.0 SWE-Bench Verified / 51.2 SWE-Bench Pro / 51.7 Terminal-Bench 2.1 [verified: watch notes, tech-insider source]. SWE-V 76.0 beats Devstral Small 2 (68%) — but at ~20GB AWQ it needs aggressive quantization or offload to fit 16GB.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: ~20GB at AWQ 4-bit — needs IQ/Q3 quant or partial CPU offload for 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: ~20GB at AWQ 4-bit — needs IQ/Q3 quant or partial CPU offload for 16GB.
 
 ## Notes
 Quality leader on paper; hardware fit is the question. vLLM/llama.cpp/Transformers.
