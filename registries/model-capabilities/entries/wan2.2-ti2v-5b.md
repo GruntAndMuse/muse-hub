@@ -21,7 +21,7 @@ Text+image to video, 720p/24fps. Quality lane pick.
 Watch benchmarks logged 2026-09-18; VDOT++ (few-step video, weights pending mid-October) is the lead to watch in this lane.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: 8-16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: 8-16GB.
 
 ## Notes
 VDOT++ code+weights promised before mid-October 2026 — re-check on arrival.
