@@ -203,7 +203,7 @@ def main():
     for row in MODELS:
         (slug, model, category, license, status, hardware, first_observed,
          last_verified, confidence, summary, quality, notes) = row
-        hw_fit = ("Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. "
+        hw_fit = ("Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. "
                   "Partial RAM offload acceptable per standing rules. "
                   "This entry: " + hardware + ".")
         text = TEMPLATE.format(slug=slug, model=model, category=category,
