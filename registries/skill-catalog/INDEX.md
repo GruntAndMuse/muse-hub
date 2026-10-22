@@ -1,9 +1,11 @@
 # Skill catalog — INDEX
+<!-- count: 90 -->
 
-88 entries. Sorted by skill. One-line summary: the finding, not the subject.
+Sorted by skill. One-line summary: the finding, not the subject.
 
 | skill | source | rating | last_verified | summary |
 |---|---|---|---|---|
+| ai-gauntlet | custom | good | 2026-10-10 | Multi-model code review: same files + prompt to Gemini, DeepSeek, ChatGPT, DuckAI (all free), then synthesize with judgment. |
 | apple-healthkit | bundled | unrated | 2026-10-09 | Apple HealthKit data: daily metrics (steps, distance, calories, heart rate, HRV, VO2max), sleep sess |
 | artifacts | bundled | unrated | 2026-10-09 | Artifact tooling (pages, apps, documents, decks, spreadsheets). |
 | asana | bundled | unrated | 2026-10-09 | Plan and track team projects and tasks in Asana; assign work to owners. |
