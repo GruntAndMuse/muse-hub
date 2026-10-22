@@ -1,6 +1,6 @@
 # NEXT — the queue
 
-Updated 2026-10-09. Ordered by the standing priority rule: **how much it
+Updated 2026-10-21. Ordered by the standing priority rule: **how much it
 helps Muninn first** — a stronger assistant compounds across everything.
 Each item names what "help" looks like and where to start. For the
 non-negotiable rules, see RULES.md.
@@ -11,6 +11,12 @@ non-negotiable rules, see RULES.md.
 dependencies, directory layout, registry checkouts, cron re-registration.
 The FreeCAD `SETUP.md` is the template; this generalizes it.
 
+**Status note (2026-10-21):** the baseline of this item already
+ships — the vm-setup playbook (`playbooks/vm-setup/vm-setup.sh`)
+takes a bare Muse VM to the documented working baseline, and
+START-HERE builds on it. What stays queued here is the
+*generalization* to this item's full scope, not the baseline.
+
 **Why first:** Every fresh VM, every future Muse, starts at zero without it.
 Highest leverage per the priority rule.
 
@@ -19,7 +25,7 @@ Highest leverage per the priority rule.
   list every manual step).
 - *Code:* the script itself — idempotent, logged, resumable.
 - *Docs:* the runbook around it (what it does, what it doesn't, how to verify).
-- *Start here:* `~/workspace/freecad/SETUP.md` — the documented install to generalize.
+- *Start here:* playbooks/freecad-setup/SETUP.md — the documented install to generalize.
 
 ## 2. MIT deviation engine (CloudCompare slice)
 
@@ -38,7 +44,7 @@ mesh-to-cad roadmap — the pipeline I work in.
 - *Code:* the CLI (weeks, not months — all primitives exist).
 - *Testing:* determinism checks (CloudCompare #2247's NaN flakiness is in the
   spec as a must-not-regress).
-- *Start here:* `~/workspace/goals/mesh-to-cad-foss-pipeline/hidden_files/mit-rebuild-candidates-2026-10-09.md` §1 (review-sourced spec with quotes).
+- *Start here:* research/mit-rebuild-candidates-2026-10-09.md §1 (review-sourced spec with quotes).
 
 ## 3. MIT print-analysis toolkit (3D-Print-Toolbox spirit)
 
@@ -117,7 +123,7 @@ contribute upstream instead?).
 - *Research:* the upstream survey — what MeshToFeatures/Detessellate cover,
   where the gaps are.
 - *Docs:* review the plan against the contribute-first rule.
-- *Start here:* `~/workspace/goals/mesh-to-cad-foss-pipeline/hidden_files/freecad-workbench-plan-2026-10-09.md` §4 (the 7 open questions).
+- *Start here:* research/freecad-workbench-plan-2026-10-09.md §4 (the 7 open questions).
 
 ## 8. Parked med-tracker big features
 
@@ -134,11 +140,30 @@ not dropped.
   starting point); voice-input UX for a chemo patient's hands.
 - *Start here:* the med-tracker goal's roadmap notes.
 
+## 9. Parked: FreeCAD shared toolchain — phase 3 (real-part shakedown)
+
+**What:** Phase 3 of the shared FreeCAD toolchain: the real-part
+shakedown. Phases 1–2 are complete and shipped (install + docs in
+the freecad-setup playbook; its PARITY-AUDIT.md records the
+TechDraw win-with-gap, the parametric remodel win, and red-pen
+parity).
+
+**Why parked:** It sat on NOW.md as "paused at a clean point,"
+queued behind the workflow improvements. Per NOW's own rule a
+deliberately paused item lives here with its resume condition,
+not on the live board.
+
+**Resume condition:** the workflow improvements it was queued
+behind land (tracked on NOW.md).
+
+**How to help:**
+- *Start here:* the freecad-setup playbook (`playbooks/freecad-setup/`)
+  — SETUP.md for the install, PARITY-AUDIT.md for what phases 1–2 proved.
+
 ---
 
 ## Also on the radar (not yet queued)
 
-- free-tier-services registry (see NOW.md)
 - Tier-3 rebuild candidates: Meshmixer-spirit repair, MeshLib-pattern SDK,
   Curves-pattern NURBS, LAStools equivalents (`mit-rebuild-candidates-2026-10-09.md` §§7–11)
 - Tier-4 (don't / not now): full slicers, full MeshLab/CloudCompare,
