@@ -22,7 +22,7 @@ Benchmarks with sources. Flag vendor-reported numbers as unconfirmed.
 - 68.0% SWE-bench Verified [verified: source, date].
 
 ## Hardware fit
-VRAM/fit note against the 16GB target rig (RTX 4070 Ti SUPER, 32GB RAM, partial offload OK).
+VRAM/fit note against the 16GB target rig (a 16GB-VRAM desktop GPU, 32GB RAM, partial offload OK).
 
 ## Notes
 License verification location. Re-evaluation rule (what would promote/displace it). Exclusion reasons if retired.
