@@ -21,7 +21,7 @@ TTS challenger with confirmed repo license.
 Apache 2.0 confirmed via official GitHub repo LICENSE (github.com/OpenBMB/VoxCPM).
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 Breeze TTS 2 was excluded as non-commercial; Voxtral TTS as CC BY-NC — VoxCPM2 and Sopro keep the permissive TTS lane.
