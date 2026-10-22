@@ -21,7 +21,7 @@ Fastest video generation pick. Speed lane.
 License caveat: 2.x weights are community-licensed — use only the Apache-2.0 0.9.x core weights [verified: watch license notes]. Verify the specific weight file before use.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: ~12GB min, 16GB ComfyUI builds.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: ~12GB min, 16GB ComfyUI builds.
 
 ## Notes
 The license caveat is load-bearing — wrong weight file voids the pick.
