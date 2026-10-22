@@ -70,8 +70,9 @@ every factual bullet is dated and sourced.
 2. Copy the template to `entries/<service>.md`, fill it with URL + date.
 3. Add the INDEX.md row (sorted by service).
 4. Run `registry-check.py` — it must pass.
-5. Ship it: for now it lives in this workspace; the canonical home is proposed
-   as a public GruntAndMuse GitHub repo, MIT licensed, PRs welcome.
+5. Ship it: the canonical home is the public hub repo — `PUBLICATION.md`
+   at the hub root is the single source for where this registry lives
+   and how it publishes. MIT licensed, PRs welcome.
 
 ## Relation to the other registries
 
