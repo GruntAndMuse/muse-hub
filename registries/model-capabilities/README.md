@@ -36,6 +36,6 @@ says where. "Apache 2.0 (badge only)" vs "Apache 2.0 (LICENSE.txt in root)"
 are different confidence levels and the entries say which. Vendor-reported
 benchmarks are flagged as unconfirmed until a third party reproduces them.
 
-Hardware context for all entries: RTX 4070 Ti SUPER 16GB VRAM, 32GB system
+Hardware context for all entries: a 16GB-VRAM desktop GPU, 32GB system
 RAM, partial RAM offload acceptable. A model that needs more is
 hardware-excluded, not listed as a challenger.
