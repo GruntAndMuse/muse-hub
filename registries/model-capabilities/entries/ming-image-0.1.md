@@ -21,7 +21,7 @@ MIT-licensed image generation challenger.
 MIT verified 2026-09-25 via HF card metadata + third-party review of both cards.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 MIT (vs Apache-2.0 incumbents) is a license-simplicity edge under his MIT-for-everything rule.
