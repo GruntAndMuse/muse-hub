@@ -21,7 +21,7 @@ Best complex/multilingual text rendering + editing in the image lane.
 GenEval 0.91, DPG-Bench leading [verified: watch benchmarks]. Qwen-Image-Edit-2511 (edit variant) scored 4.51 ImgEdit_O vs FireRed-Image-Edit-1.1's 4.56 [vendor-reported, FireRed README, 2026-10-08] — close race, watch it.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: needs GGUF/fp8 on 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: needs GGUF/fp8 on 16GB.
 
 ## Notes
 Needs quantized builds on 16GB — fp8 or GGUF, no full-precision local run.
