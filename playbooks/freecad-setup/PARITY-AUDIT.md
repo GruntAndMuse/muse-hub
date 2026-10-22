@@ -21,7 +21,7 @@
 
 **What was built:** `audit/audit_draw.py` (freecadcmd) → 3 kernel-projected views (Front/Top/Iso) as SVG + placement manifest → `audit/compose_page.py` (plain python) → A4 page SVG with ISO title block, positioned views, view labels, 7 dimensions + 2 leader notes → `audit/render_page.py` (bundled PySide6, Qt offscreen) → PNG + PDF.
 
-**Evidence:** [audit_drawing.png](sandbox://workspace/freecad/audit/audit_out/audit_drawing.png) · [audit_drawing.pdf](sandbox://workspace/freecad/audit/audit_out/audit_drawing.pdf) · [audit_drawing.svg](sandbox://workspace/freecad/audit/audit_out/audit_drawing.svg)
+**Evidence:** `audit_drawing.png` · `audit_drawing.pdf` · `audit_drawing.svg` — generated in the author's environment (`workspace/freecad/audit/audit_out/`); the artifacts are not shipped with the hub, so the verdicts recorded in this file are the record.
 
 **What works (wins):**
 - `DrawViewPart` projects correctly headless for Front `(0,-1,0)`, Top `(0,0,1)`, Iso `(1,1,1)`. Verified mappings: Front 2D = (x,z), Top 2D = (x,y), both centered on the part bbox, units = mm, unscaled.
@@ -43,7 +43,7 @@
 
 **What was built:** `audit/audit_part.py` — a V2-style bracket (60×40×8 plate, 2× M5 flat-head countersunk holes with his *measured* hardware numbers — 9.8 dia head, 3.6+0.25 recess, 90° cone, 5.5 clearance — 30×20×0.4 inlay pocket, 1.5 mm fillets on vertical edges per the FDM rule). All parameters in one block at the top.
 
-**Evidence:** [audit_bracket.FCStd](sandbox://workspace/freecad/audit/audit_out/audit_bracket.FCStd) · [audit_bracket.step](sandbox://workspace/freecad/audit/audit_out/audit_bracket.step) · [audit_bracket.stl](sandbox://workspace/freecad/audit/audit_out/audit_bracket.stl)
+**Evidence:** `audit_bracket.FCStd` · `audit_bracket.step` · `audit_bracket.stl` — generated in the author's environment (`workspace/freecad/audit/audit_out/`); the artifacts are not shipped with the hub, so the verification figures recorded below are the record.
 
 **Verification (all in-script, all passing):** bbox 60.000/40.000/8.000, 2 clearance cylinders at Ø5.5, 2 countersink cones at Ø9.8, solid valid. STL cross-check via trimesh: watertight, volume 18441.90 vs solid 18441.75 (tessellation delta), bounds exact.
 
