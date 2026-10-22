@@ -21,7 +21,7 @@ Image-EDITING model (instruction-following edits, identity consistency, multi-el
 ImgEdit_O 4.56 / GEdit_O EN 7.943 / CN 7.887 / REDEdit EN 4.26 / CN 4.33 — beats every open-source row in their table (Qwen-Image-Edit-2511 4.51/7.877, LongCat-Image-Edit 4.45, FLUX.2[Dev] 4.35) [VENDOR-REPORTED, official README, 2026-10-08 — unconfirmed]. No GenEval/DPG-Bench — not head-to-head with Z-Image-Turbo (0.82) / Qwen-Image (0.91).
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: ~30GB VRAM optimized build — needs partial RAM offload (acceptable per his rules).
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: ~30GB VRAM optimized build — needs partial RAM offload (acceptable per his rules).
 
 ## Notes
 License verified 2026-10-08 on official GitHub (License field + LICENSE file + README). Backfill: weights released 2026-03-03; Oct 6 coverage was a recrawl. Photo restoration + portrait consistency relevant to his GruntAndMuse graphic work.
