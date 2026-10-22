@@ -97,6 +97,7 @@ def check():
     for sk in sorted(index_skills - seen):
         errors.append(f"INDEX.md: orphan row for '{sk}' (no entries file)")
 
+    errors.extend(prose_count_errors())
     if errors:
         print(f"{len(errors)} violation(s):")
         for e in errors:
@@ -132,7 +133,72 @@ def stale():
     return 0
 
 
+
+# --- Prose-count leg (added 2026-10-21) -----------------------------------
+# No-self-contradiction rule (hub CONVENTIONS.md): a count the tree can
+# compute is generated, never hand-typed. INDEX.md may carry one machine
+# stamp (<!-- count: N -->), written by --stamp; any stamp or bare
+# "N entries/topics" claim in INDEX.md or README.md that disagrees with
+# the computed count is a violation. Born of the 2026-10-21 audit: prose
+# said 88 over 90 entry files and 18 over 19, and no checker could see
+# either — this leg exists so the next one fails loudly instead.
+
+COUNT_STAMP_RE = re.compile(r"<!--\s*count:\s*(\d+)\s*-->")
+COUNT_CLAIM_RE = re.compile(r"\b(\d+)\s+(entries|topics)\b")
+
+
+def computed_count():
+    return len([f for f in os.listdir(ENTRIES) if f.endswith(".md")])
+
+
+def prose_count_errors():
+    errors = []
+    actual = computed_count()
+    for name in ("INDEX.md", "README.md"):
+        path = os.path.join(ROOT, name)
+        if not os.path.exists(path):
+            continue
+        with open(path) as f:
+            text = f.read()
+        stamps = COUNT_STAMP_RE.findall(text)
+        if len(stamps) > 1:
+            errors.append(f"{name}: {len(stamps)} count stamps — exactly one allowed")
+        for s in stamps:
+            if int(s) != actual:
+                errors.append(
+                    f"{name}: stamped count {s} != computed {actual} "
+                    f"(fix: registry-check.py --stamp)"
+                )
+        for line in text.splitlines():
+            if "<!--" in line:
+                continue
+            for m in COUNT_CLAIM_RE.finditer(line):
+                if int(m.group(1)) != actual:
+                    errors.append(
+                        f"{name}: prose claims '{m.group(0)}' but the registry "
+                        f"holds {actual} — drop the number (point, don't "
+                        f"repeat) or stamp it"
+                    )
+    return errors
+
+
+def stamp_count():
+    actual = computed_count()
+    with open(INDEX) as f:
+        text = f.read()
+    new, n = COUNT_STAMP_RE.subn(f"<!-- count: {actual} -->", text, count=1)
+    if n == 0:
+        lines = text.splitlines(keepends=True)
+        lines.insert(1, f"<!-- count: {actual} -->\n")
+        new = "".join(lines)
+    with open(INDEX, "w") as f:
+        f.write(new)
+    print(f"Stamped INDEX.md: count {actual}.")
+    return 0
+
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] == "--stamp":
+        sys.exit(stamp_count())
     if len(sys.argv) > 1 and sys.argv[1] == "stale":
         sys.exit(stale())
     sys.exit(check())
