@@ -1,4 +1,5 @@
 # Model capabilities — index
+<!-- count: 25 -->
 
 One-line summaries state the *finding*, not the subject. Sorted by category,
 then slug. Status in brackets.
