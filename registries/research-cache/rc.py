@@ -214,6 +214,7 @@ def cmd_check():
             errors.append(f"INDEX.md: orphan row for missing topics/{s}.md")
     if idx != sorted(idx):
         errors.append("INDEX.md: rows are not sorted by slug")
+    errors.extend(prose_count_errors(len(topics)))
     if errors:
         print(f"{len(errors)} convention violation(s):")
         for e in errors:
@@ -223,8 +224,8 @@ def cmd_check():
 
 
 def main():
-    if len(sys.argv) < 2 or sys.argv[1] not in ("lookup", "stale", "new", "show", "check"):
-        print("usage: rc.py lookup <keywords...> | rc.py stale | rc.py new <topic-slug> | rc.py show <slug> | rc.py check")
+    if len(sys.argv) < 2 or sys.argv[1] not in ("lookup", "stale", "new", "show", "check", "stamp"):
+        print("usage: rc.py lookup <keywords...> | rc.py stale | rc.py new <topic-slug> | rc.py show <slug> | rc.py check | rc.py stamp")
         sys.exit(1)
     cmd, args = sys.argv[1], sys.argv[2:]
     if cmd == "lookup":
@@ -246,7 +247,64 @@ def main():
         cmd_show(args[0])
     elif cmd == "check":
         cmd_check()
+    elif cmd == "stamp":
+        cmd_stamp()
 
+
+
+# --- Prose-count leg (added 2026-10-21) -----------------------------------
+# No-self-contradiction rule (hub CONVENTIONS.md): a count the tree can
+# compute is generated, never hand-typed. INDEX.md may carry one machine
+# stamp (<!-- count: N -->), written by `rc.py stamp`; any stamp or bare
+# "N entries/topics" claim in INDEX.md or README.md that disagrees with
+# the topic count is a violation. (2026-10-21 audit: sibling registries
+# shipped prose counts of 88 over 90 files and 18 over 19, invisible to
+# their checkers. This registry's INDEX never carried a hand count — the
+# leg keeps it that way.)
+
+COUNT_STAMP_RE = re.compile(r"<!--\s*count:\s*(\d+)\s*-->")
+COUNT_CLAIM_RE = re.compile(r"\b(\d+)\s+(entries|topics)\b")
+
+
+def prose_count_errors(actual):
+    errors = []
+    for name in ("INDEX.md", "README.md"):
+        path = ROOT / name
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        stamps = COUNT_STAMP_RE.findall(text)
+        if len(stamps) > 1:
+            errors.append(f"{name}: {len(stamps)} count stamps — exactly one allowed")
+        for s in stamps:
+            if int(s) != actual:
+                errors.append(
+                    f"{name}: stamped count {s} != computed {actual} "
+                    f"(fix: rc.py stamp)"
+                )
+        for line in text.splitlines():
+            if "<!--" in line:
+                continue
+            for m in COUNT_CLAIM_RE.finditer(line):
+                if int(m.group(1)) != actual:
+                    errors.append(
+                        f"{name}: prose claims '{m.group(0)}' but the cache "
+                        f"holds {actual} — drop the number (point, don't "
+                        f"repeat) or stamp it"
+                    )
+    return errors
+
+
+def cmd_stamp():
+    actual = len(all_topics())
+    text = INDEX.read_text(encoding="utf-8")
+    new, n = COUNT_STAMP_RE.subn(f"<!-- count: {actual} -->", text, count=1)
+    if n == 0:
+        lines = text.splitlines(keepends=True)
+        lines.insert(1, f"<!-- count: {actual} -->\n")
+        new = "".join(lines)
+    INDEX.write_text(new, encoding="utf-8")
+    print(f"Stamped INDEX.md: count {actual}.")
 
 if __name__ == "__main__":
     main()
