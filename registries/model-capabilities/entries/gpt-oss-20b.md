@@ -21,7 +21,7 @@ Open-weight coding/general model in the 20B class. Watch-listed challenger.
 Seeded from watch history; exact first-log date approximate (watch seeding era).
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: fits 16GB.
 
 ## Notes
 Smaller/faster alternative to the 24-30B incumbents; quality position per watch benchmarks.
