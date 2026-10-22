@@ -21,7 +21,7 @@ Text-to-music with the best lyric controllability on the watch.
 Triton/Win11 caveats noted in watch logs — verify the inference stack on the target machine.
 
 ## Hardware fit
-Target rig: RTX 4070 Ti SUPER 16GB VRAM, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: ~6.2GB.
+Target rig: a 16GB-VRAM desktop GPU, 32GB system RAM. Partial RAM offload acceptable per standing rules. This entry: ~6.2GB.
 
 ## Notes
 Kandinsky 6.0 (MIT) is the only permissive video+audio model — adjacent, not a replacement.
