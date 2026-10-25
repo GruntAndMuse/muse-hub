@@ -113,9 +113,12 @@ left the hole; nothing FOSS fills it.
 ## 7. FreeCAD workbench for mesh-to-cad
 
 **What:** FreeCAD workbench running the mesh-to-cad pipeline inside FreeCAD.
-Plan complete, **awaiting Dennis's red pen** — including the
-contribute-vs-rebuild call (does an existing workbench cover enough to
-contribute upstream instead?).
+**Status update (2026-10-23):** built — MVP shipped publicly 2026-10-09;
+0.2.0 (rebuild guidance, verification report, STEP/STL/TechDraw export)
+built locally 2026-10-21 and held unpushed by owner ruling. Canonical
+status: the FreeCAD project's progress record (FREECAD-PROGRESS.md).
+(The red-pen and contribute-vs-rebuild questions below are the
+2026-10-09 framing, kept for the record.)
 
 **Why:** Puts the pipeline in modelers' hands; dogfoods the shared toolchain.
 
@@ -164,6 +167,19 @@ behind land (tracked on NOW.md).
 
 ## Also on the radar (not yet queued)
 
+- **Period-correct brick soldiers + 3D-printable models** (Dennis, 2026-10-20,
+  off a BrickWar ad): the military brick world (BrickWar and kin) is all
+  proprietary kits — minifig soldiers, period vehicles, display rifles — sold
+  at collector prices. The open-source version: an original, free model set of
+  **period-correct** minifig-scale soldiers and their gear (WWI / WWII /
+  Korea / Vietnam / modern) as print-at-home models (STL/3MF + parametric
+  sources), where "period correct" is verified against the real kit — right
+  webbing, right weapon, right uniform details — by someone who wore the
+  modern version. Our edges: first-hand kit knowledge, the K2 print pipeline,
+  and mesh-to-cad for turning references into clean parametric models.
+  Design originals only, in a compatible scale — Phoenix clean-room rules
+  apply (no LEGO or BrickWar IP copied; the minifigure form itself is
+  trademark-sensitive, so the figures are our own designs).
 - Tier-3 rebuild candidates: Meshmixer-spirit repair, MeshLib-pattern SDK,
   Curves-pattern NURBS, LAStools equivalents (`mit-rebuild-candidates-2026-10-09.md` §§7–11)
 - Tier-4 (don't / not now): full slicers, full MeshLab/CloudCompare,
