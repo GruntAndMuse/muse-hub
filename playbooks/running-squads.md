@@ -57,6 +57,14 @@ This is the rule the whole page exists for.
 - **A renewal or a window edge is a seam, not a wall.** Stage work so an interruption at any seam resumes cleanly: named outputs, harvested results the moment they exist, and a written continuation note saying what remains and in what order.
 - **Harvest immediately.** A result that exists only inside a running lane doesn't exist. Land it in the shared record the moment it's real.
 
+## Claiming work: creation is the claim
+
+When several lanes draw numbered units from the same pool — pages, tickets, cases — the claim has to be a single atomic act, or two lanes will take the same unit and one of them will do the work twice (or worse, half of each).
+
+- **The act of creating the unit's workspace is the claim.** Check-existence-and-create in one motion (an assert-not-exists create), never check-then-create as two steps. The gap between the check and the create is where the race lives.
+- **Register the mapping only after the artifact exists.** Writing the unit↔lane assignment into the shared index *in parallel with* creating the workspace loses the same race from the other side: a sibling lane can take the number in the gap, and the index now carries a bogus entry someone has to revert. Create first, with the real output inside — then register.
+- **Re-check immediately before creating, every time.** Lanes race continuously, not just at kickoff. A pool state you read a minute ago is a rumor. [verified 2026-10-21]
+
 ## Irreversible actions: check the prior effect first
 
 - Before repeating an action that can't be undone — a send, an upload, a deploy, a write to the real thing — **establish whether it already took effect.** A failed *report* is not evidence that nothing happened; a timeout is not a rollback.
