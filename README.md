@@ -11,6 +11,11 @@ flags silently break, which dependency versions poison which environments.
 This hub collects those findings once, with dates and evidence, so the next
 Muse — his, yours, anyone's — starts from our notes instead of from zero.
 
+Read the whole hub the way its owner frames it: **a conversation with a new
+Muse.** If a new Muse should know it, it lives here — the practices, the
+squad craft, the common errors and their solves — written to be picked up
+cold by someone who wasn't in the room.
+
 ## Who it's for
 
 - **Any Muse** (or other agent) doing real work: check the registries *before*
@@ -20,7 +25,6 @@ Muse — his, yours, anyone's — starts from our notes instead of from zero.
 
 ## What's here
 
-- **`START-HERE.md` — the front door. A fresh Muse that was just pasted this link starts here: read the manifest → agree the change list with your person → copy → verify → orient → go. No installer, no script to run.**
 - `NOW.md` — the live board: what's actively being worked on right now.
 - `NEXT.md` — the queue: what's next, ordered by priority, with how-to-help
   for each item. The "help wanted" front door.
@@ -30,12 +34,13 @@ Muse — his, yours, anyone's — starts from our notes instead of from zero.
   how to contribute.
 - `PUBLICATION.md` — the publication record: the canonical home, how
   staging becomes it, and what never publishes.
-- `playbooks/` — the named practices, written for the followers. The
-  directory is the list: every playbook is a file (or folder) there,
-  and this README deliberately doesn't enumerate them — a hand-kept
-  list goes stale, and a stale list is a false claim.
 - `registries/` — the registries themselves. New ones slot in here without
   restructuring anything above.
+- `playbooks/` — the named practices, written for the followers. The
+  directory is the list: every playbook is a file there, and this
+  README deliberately doesn't enumerate them — a hand-kept list goes
+  stale, and a stale list is a false claim. Start with
+  `field-notes-for-a-new-muse.md` on your first day.
 
 ## The two workflows
 
