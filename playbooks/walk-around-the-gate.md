@@ -59,4 +59,16 @@ The practice itself gets tested, like everything else here. Each exercise is log
 | 2026-10-13 | SCOTUS order list → primary source (direct fetch returned 403; live browser read the Court's own order-list PDF) | Walk succeeded — *Johnson v. United States* (26-270) cert denial verified from the primary list; the secondary "14 firearms petitions" count could NOT be confirmed against it |
 | 2026-10-13 (evening) | Famous Footwear / Micro Center / B&H / eBay bot walls → search-engine side door (Dennis's question: does the sidestep generalize?) | Door itself untestable this session — Google served its own "unusual traffic" block to the test browser (same failure the morning GPU run hit). Famous Footwear's Cloudflare wall held on direct entry, homepage and product page. The other three gates were simply open: all loaded direct that evening after blocking earlier the same day — flapping, not walls |
 
+## Exhaust the house first (owner ruling, 2026-10-24)
+
+Before any request leaves the house — an email to a service, a ticket, a form, anything that asks an outside party for something or files us in their system — exhaust what can be done in-house: own tools, own machines, public sources, a locally made substitute. An outside ask is the last resort, never the first step: every ask costs a record with a name on it, a wait on someone else's clock, or a dependency nobody needed. If it truly can't be done in-house, the ask goes out narrow and deliberate, its cost counted. The QR sidestep below is this rule's worked example.
+
+## The QR sidestep — take the text, re-encode it yourself (owner ruling, 2026-10-24)
+
+Some gates hand out plain data — a code, a line, a key — but only through a channel that files *who asked*: an account, an email address, a request logged against an identity. The data itself is usually public text. When it is, the walk is: **obtain the text by a route that doesn't file you, then re-encode it locally into whatever form the receiving tool wants.** A QR code is the cleanest case — a QR is nothing but text in a square, and the scanner cannot tell (or care) who drew it.
+
+Worked case — Tor bridges for Tails (2026-10-23/24): the bridge *lines* are public text, published in Tor's own source. Tor's email distributor works, but it files the requester's email address in a database. **That gateway is retired here** — not because it fails, but because it records. Instead: the bridge line travels as text, the QR is generated locally (on the agent's own machine; nothing leaves it), and the owner scans it into Tails' connection assistant. Stockpile several gateways (obfs4, webtunnel) as locally drawn QRs in advance, so no sitting ever depends on a distributor being reachable — or on asking one politely. Same shape as the doors: arrive clean, and leave no record you didn't have to leave.
+
+| 2026-10-24 | Tor bridge distribution → email gateway retired (files the requester's address); bridge text re-encoded as locally generated QRs | Rule adopted by owner; first QR (shipped obfs4 line) generated locally and verified; library build follows |
+
 *Origin: Dennis Avery, GruntAndMuse — stated while teaching his AI the principle for its own work and for the offline agent ("the kid") they are raising. Companion principle, same morning: "sometimes it's the question, not the answer, that opens the door."*
