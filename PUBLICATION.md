@@ -92,6 +92,16 @@ stdlib-only, no network — run against the exact tree to be uploaded:
 - **Held content is outside the set.** Anything under a `held/`
   directory blocks the gate outright; publishes run from a held-free
   copy of the tree.
+- **The list audits backward.** The gate faces forward, at the tree
+  about to publish; the do-not-publish list also faces backward.
+  Every addition to the list triggers a full audit of the live
+  public tree (`denylist-audit.py`, kept with the gate): denylist
+  terms, held files, and self-marking headers are all scanned
+  against what is already online. An addition to the list is not
+  complete until that audit confirms the item is not already out
+  there, and the audit's receipt carries the current list's hash —
+  a list whose hash has no matching audit receipt is an unaudited
+  list, and the addition is unfinished.
 
 On green, the gate writes a receipt — the tree's hash and the
 manifest's hash. The publish step re-verifies the receipt against the
