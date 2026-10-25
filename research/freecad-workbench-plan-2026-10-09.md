@@ -1,6 +1,7 @@
 # FreeCAD Workbench for mesh-to-cad — Research & Build Plan
 
 **Status:** PLAN ONLY — no code written. For Dennis's red pen before anything gets built.
+**Superseded as status (2026-10-23):** this is the 2026-10-09 pre-build plan, kept as a historical record. The workbench was built — MVP shipped 2026-10-09; 0.2.0 (guidance, verification, export) built locally 2026-10-21, push held by owner ruling. Current status lives in the FreeCAD project's progress record (FREECAD-PROGRESS.md).
 **Date:** 2026-10-09
 **Goal:** A FreeCAD workbench that lets a user bring a mesh in (scan, download, or AI-generated) and run the mesh-to-cad pipeline from inside FreeCAD, ending with editable parametric geometry.
 
