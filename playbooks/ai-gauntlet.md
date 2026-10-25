@@ -50,8 +50,49 @@ Give me:
 5. Be blunt. This ships to [USERS] who will file issues.
 ---
 
+## Standing review surface checklist (adopted 2026-10-24)
+
+Every review brief carries this header; every lane returns an explicit
+CLEAR or FLAG on each surface. A lane that skips a surface filed an
+incomplete review — return it, don't grade it.
+
+1. Payments and money movement
+2. Data deletion and destructive operations
+3. Auth, permissions and secrets handling
+4. Injection vectors (SQL, command, template)
+5. Unhandled edge cases and failure modes
+6. Efficiency traps (N+1, unbounded loops or queries)
+7. Business-logic correctness against the brief and spec
+8. Privacy and data-exposure surfaces
+
+Style is out of scope unless it hides a defect. The hunt is what breaks
+in production, not what breaks a linter. Any FLAG on surfaces 1–4
+escalates the item into the full security gauntlet (adversarial
+multi-reviewer pass, failure-injection tests, regression test) before
+the ship gate can clear.
+
+## Gate the ship on the verdict (adopted 2026-10-24)
+
+A finding is gate-critical only when it is unanimous across lanes, or
+single-lane but verified against the code or on the bench, or a
+bench-demonstrated security finding. An unverified single-lane claim
+never blocks — a lone reviewer does not hold the gate.
+
+A gate-critical finding blocks push, merge and ship/deploy on that
+repo or build until fixed or explicitly overridden by the owner
+(override logged on the item, with its reason). Work continues on
+everything not gated. Warnings below gate-critical ride as open items
+in the project's canonical record with an owner, surfaced in digests
+until closed. After a fix, re-run only the lanes that flagged it; the
+finding must re-verify CLEAR before the gate opens.
+
 ## Gauntlet history
 
+- 2026-10-24: surface checklist + ship gate adopted (owner ruling,
+  from vetting an external single-reviewer pipeline — tool rejected,
+  two process steps implemented in stronger house form: their
+  merge-block becomes a verified-findings gate, their prompt focus
+  list becomes a completeness-enforced standing checklist).
 - 2026-10-10: med-tracker (Prompt A) — 4 runners. Zero bug overlap.
   DeepSeek: 20 logic bugs w/ ship-blockers. Gemini 3.1 Pro: 4 platform bugs.
   ChatGPT: human-factors review ("ship LESS not more"). DuckAI: honest
