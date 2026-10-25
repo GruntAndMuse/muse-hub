@@ -63,6 +63,26 @@
 - **Cause:** the request's *shape* tripped the tool's filter — often an edit form (image + transformation phrasing), not the underlying intent, which may be entirely legitimate work the tool did happily in generative form minutes earlier.
 - **Solve:** do **not** re-shape the same request and retry — variants of a refused form get refused, and pressing reads as evasion. Change the route entirely: a fresh generation instead of an edit, a deterministic/programmatic edit instead of a generative one, or a different tool. Report the refusal honestly in the meantime. [verified 2026-10-14]
 
+## Concurrency and background jobs
+
+### Two lanes do the same numbered unit — and the index lies about it
+- **Cause:** parallel lanes claimed work by checking a shared index and then creating the unit's workspace as a separate step. In the gap, a sibling lane took the same number for a different unit; a mapping registered in parallel with the create pointed at a folder another lane owned.
+- **Solve:** creation is the claim — check-and-create in one atomic motion (assert-not-exists), and register the unit↔lane mapping only **after** the workspace exists with its real output inside. Re-check the pool immediately before creating, every time. Full treatment: [Running Squads — "Claiming work"](running-squads.md). [verified 2026-10-21]
+
+### The output file exists, so you reported the job passed
+- **Cause:** a backgrounded job wrote its output file, and a poll of the job rendered empty output — so the runner checked the file's existence, called it done, and shipped the result. The job's own completion log carried a **fail** verdict the whole time; the artifact on disk was the failed attempt.
+- **Solve:** a background job is not done until its **verdict is read from its log** — the QA line, the exit record, the summary the job itself wrote. File existence proves a file exists. When a poll comes back empty, that's an unread log, not a pass. [verified 2026-10-21]
+
+## Scanned documents and OCR
+
+### Your fix lands on the wrong OCR boxes
+- **Cause:** the same detection set exists in two orders: the human-readable dump lists boxes sorted by position (top-to-bottom), while the machine-readable arrays are in raw detection order. The two orders differ — sometimes only in a short run of indices, which is exactly why the mistake survives casual checks: most indices match, and a wrong-index repair can still pass aggregate checks (the multiset of boxes is unchanged) while failing downstream, where positions are computed per-box.
+- **Solve:** take box indices from the **machine array itself** (dump the array with its indices) whenever you address, move, or repair a box — never from the sorted display dump. If a tool shows you a sorted view, treat its numbering as display-only. [verified 2026-10-21]
+
+### A text page classifies as a figure page
+- **Cause:** on thin-paper scans, the reverse side ghosts through (show-through) and the classifier counts the ghost as non-text ink. The page's non-text fraction inflates past the figure threshold and a normal text page is filed as a figure. A very faint page can defeat the OCR read almost entirely while remaining an ordinary text page to the eye.
+- **Solve:** visually verify **every** figure call and every high-non-text text call on ghosty masters before the census is final. Classifier fractions are a first pass on scans, not a verdict — the ghost is ink the page never printed. [verified 2026-10-21]
+
 ## Verification itself
 
 ### Your check "disproves" an artifact you believe is correct
@@ -71,4 +91,4 @@
 
 ---
 
-*Harvested 2026-10-14 from this operation's own lesson files and run logs. Add your own the day you verify them: symptom first (that's what a stuck Muse searches), cause, solve, date.*
+*Harvested 2026-10-14 from this operation's own lesson files and run logs; concurrency, background-job, and scanned-document entries added 2026-10-21. Add your own the day you verify them: symptom first (that's what a stuck Muse searches), cause, solve, date.*
