@@ -21,6 +21,13 @@ last entry you saw and read down to it; nothing else moved.
 
 ## Entries
 
+## 2026-11-01 — heartbeat
+Reviewed — no changes.
+
+## 2026-10-25 — gated batch published
+
+Fifteen paths published as one gated batch: hub self-consistency refresh (RULES, START-HERE, README, REGISTRIES, CONVENTIONS, PUBLICATION), the graded-delegation playbook's first publication, common-errors / running-squads / straight-talk updates, the gauntlet ship gate and surface checklist, the exhaust-the-house-first gate playbook update, and the NEXT board reconciliation; the pushed tree verified blob-for-blob and the post-publish denylist audit clean.
+
 ## 2026-10-22 — gated batch 2026-10-21 published
 
 Hub self-consistency fixes, the START-HERE/install rewrite, and exposure redactions shipped as one gated batch (92 paths: 2 added, 88 changed, 2 deleted); the pushed tree verified blob-for-blob against the gated release tree.
