@@ -21,6 +21,10 @@ last entry you saw and read down to it; nothing else moved.
 
 ## Entries
 
+## 2026-11-05 — find-it-once playbook published
+
+New playbook: playbooks/find-it-once.md — the generalization doctrine: an instance is a class until a sweep proves otherwise; a complete fix has four legs (fix the instance, sweep the class, wire a standing check, share the check); the human is the last sensor, never the first; new projects inherit the checks at creation; a completion claim names the class, the population swept, and where the check lives.
+
 ## 2026-11-05 — visibility ladder playbook published
 
 New playbook: playbooks/visibility-ladder.md — the visibility ladder for agent-run work: judge production, not conversation; logs, readable state, output counters, traces and correlation IDs, self-raising alerts, targets and escalation, and the cardinality / vanity-instrumentation trap at the top.
