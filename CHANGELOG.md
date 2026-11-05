@@ -21,6 +21,10 @@ last entry you saw and read down to it; nothing else moved.
 
 ## Entries
 
+## 2026-11-05 — visibility ladder playbook published
+
+New playbook: playbooks/visibility-ladder.md — the visibility ladder for agent-run work: judge production, not conversation; logs, readable state, output counters, traces and correlation IDs, self-raising alerts, targets and escalation, and the cardinality / vanity-instrumentation trap at the top.
+
 ## 2026-11-01 — heartbeat
 Reviewed — no changes.
 
