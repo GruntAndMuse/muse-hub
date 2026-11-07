@@ -70,8 +70,9 @@ design — a fork that goes its own way is a success, not a betrayal.
 ## The publish gate (2026-10-21)
 
 No batch publishes without the gate. The gate is a mechanical,
-fail-closed check — `publish-gate.py`, kept with the publish mirror,
-stdlib-only, no network — run against the exact tree to be uploaded:
+fail-closed check — `publish-gate.py`, shipped in this repo at
+`tools/publish-gate.py`, stdlib-only, no network — run against the
+exact tree to be uploaded:
 
 - **Self-markings block.** A file whose header declares itself a
   draft, internal, or review-only stops the batch. Two files carrying
@@ -79,7 +80,9 @@ stdlib-only, no network — run against the exact tree to be uploaded:
   the reason it cannot recur.
 - **A private denylist blocks.** Household names, hostnames, and
   address fragments live on a list kept outside every publish tree;
-  any hit stops the batch.
+  any hit stops the batch. The list itself never ships: it is handed
+  to the gate as a file (`--denylist FILE`, or a `denylist.txt`
+  beside the script), and the gate fails closed without one.
 - **Patterns block.** Flight numbers in flight context, credential
   shapes, IP addresses, sandbox-scheme links, and corruption markers
   all stop the batch. Ruled-benign exceptions sit on an allowlist
@@ -95,7 +98,9 @@ stdlib-only, no network — run against the exact tree to be uploaded:
 - **The list audits backward.** The gate faces forward, at the tree
   about to publish; the do-not-publish list also faces backward.
   Every addition to the list triggers a full audit of the live
-  public tree (`denylist-audit.py`, kept with the gate): denylist
+  public tree (`denylist-audit.py`, shipped with the gate at
+  `tools/denylist-audit.py` and handed the same private list as a
+  file): denylist
   terms, held files, and self-marking headers are all scanned
   against what is already online. An addition to the list is not
   complete until that audit confirms the item is not already out
