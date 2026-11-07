@@ -106,6 +106,8 @@ Do the approved lines from step 3 as plain folder and file copies, announcing ea
 
 Copying is idempotent the honest way: if a destination already exists, say so and ask before overwriting anything.
 
+**Skills path — if your runtime keeps skills somewhere else.** The destinations above use the hub's own layout, `~/workspace/skills/`. If your runtime discovers skills from a different root, that root replaces `~/workspace/skills/` everywhere in steps 3, 5 and 6: copy each `skills/<name>/` there instead, and verify at that path. `optional/install.sh` takes the same hint — set `SKILLS_DIR` to your runtime's skills root (for example `SKILLS_DIR=~/elsewhere/skills ./install.sh`) and it installs and self-tests there.
+
 ### 6. Verify — read-only (2 min)
 
 Run these checks and report the results to your person as a list. A failed check is a report, never a silent fix — ask before repairing anything.
