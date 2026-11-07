@@ -12,6 +12,14 @@
 #
 # NOTE: `set -u` but NOT `set -e` — a failed check must record FAIL and
 # continue, not abort the whole run. The exit code at the end is the verdict.
+#
+# Usage: vm-setup.sh [--allow-break-system-packages]
+#   --allow-break-system-packages   Explicit opt-in: if pip refuses a
+#     tier-2 install because the environment is externally managed
+#     (PEP 668), retry once with --break-system-packages. WITHOUT this
+#     flag the refusal is reported and that package is skipped — the
+#     START-HERE step 4 rule: report and stop, never add force flags on
+#     the script's own initiative.
 
 set -uo pipefail
 
@@ -22,6 +30,16 @@ pass() { echo "PASS: $1"; }
 fail() { echo "FAIL: $1"; echo "      FIX: $2"; FAIL=$((FAIL + 1)); }
 info() { echo "  -> $1"; }
 changed() { echo "  ++ $1"; CHANGED=$((CHANGED + 1)); }
+
+# ---- options ---------------------------------------------------------------
+ALLOW_BSP=0
+for a in "$@"; do
+    case "$a" in
+        --allow-break-system-packages) ALLOW_BSP=1 ;;
+        -h|--help) echo "usage: vm-setup.sh [--allow-break-system-packages]"; exit 0 ;;
+        *) echo "unknown argument: $a" >&2; echo "usage: vm-setup.sh [--allow-break-system-packages]" >&2; exit 2 ;;
+    esac
+done
 
 echo "=== vm-setup: Hatch VM capability check ==="
 echo "    idempotent — re-running is safe; skips what already works."
@@ -99,10 +117,10 @@ else
         info "$pkg is '$got', want '$want' — installing pinned..."
         if python3 -m pip install --user --quiet "$clean" 2>/tmp/vm-setup-pip.log; then
             changed "installed $clean"
-        else
+        elif [ "$ALLOW_BSP" -eq 1 ]; then
             # PEP 668 externally-managed environments need the explicit flag.
-            # Retry once with it, loudly — never silently.
-            info "plain pip refused (externally-managed?), retrying with --break-system-packages"
+            # The operator opted in with --allow-break-system-packages.
+            info "plain pip refused (externally-managed?), retrying with --break-system-packages (opted in via --allow-break-system-packages)"
             if python3 -m pip install --user --quiet --break-system-packages "$clean" 2>/tmp/vm-setup-pip.log; then
                 changed "installed $clean (with --break-system-packages)"
             else
@@ -110,6 +128,12 @@ else
                     "See /tmp/vm-setup-pip.log. Do NOT install unpinned to 'fix' it."
                 continue
             fi
+        else
+            # START-HERE step 4: report the refusal and stop — never add
+            # force flags on the script's own initiative.
+            fail "pip install $clean refused (externally-managed environment?)" \
+                "Report-and-stop per START-HERE step 4. If your person approves the override, re-run with --allow-break-system-packages. Log: /tmp/vm-setup-pip.log."
+            continue
         fi
         got2="$(python3 -c "import $mod; print($mod.__version__)" 2>/dev/null || echo MISSING)"
         if [ "$got2" = "$want" ]; then
