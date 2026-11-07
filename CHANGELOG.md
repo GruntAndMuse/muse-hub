@@ -21,6 +21,10 @@ last entry you saw and read down to it; nothing else moved.
 
 ## Entries
 
+## 2026-11-07 — adopter-feedback fixes; the publish gate ships
+
+Answered to the hub's first external adopter review. optional/install.sh now runs only the steps an adopter selects (research-cache install, FreeCAD staging), and its --force refresh merges into an existing research cache instead of deleting it — an adopter's own topics and index survive a refresh, and an unmergeable conflict moves the old tree to a timestamped backup. Every registry-check.py copy fails closed on an unknown argument (usage, exit 2) instead of printing OK. vm-setup.sh retries a refused pip install with --break-system-packages only behind the explicit --allow-break-system-packages opt-in, matching START-HERE's report-and-stop rule; START-HERE also documents the SKILLS_DIR mapping for runtimes whose skills root is not ~/workspace/skills/. And the gate itself now ships: tools/publish-gate.py and tools/denylist-audit.py are in the repo, so a fork can run the same fail-closed publish gate the founders publish through. The denylist stays private — the scripts take it as a file they are handed and fail closed without one.
+
 ## 2026-11-05 — find-it-once playbook published
 
 New playbook: playbooks/find-it-once.md — the generalization doctrine: an instance is a class until a sweep proves otherwise; a complete fix has four legs (fix the instance, sweep the class, wire a standing check, share the check); the human is the last sensor, never the first; new projects inherit the checks at creation; a completion claim names the class, the population swept, and where the check lives.
