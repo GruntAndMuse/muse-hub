@@ -197,6 +197,9 @@ def stamp_count():
     return 0
 
 if __name__ == "__main__":
+    if len(sys.argv) > 2 or (len(sys.argv) > 1 and sys.argv[1] not in ("--stamp", "stale")):
+        print("usage: registry-check.py [--stamp | stale]  (no argument: validate everything)")
+        sys.exit(2)
     if len(sys.argv) > 1 and sys.argv[1] == "--stamp":
         sys.exit(stamp_count())
     if len(sys.argv) > 1 and sys.argv[1] == "stale":
