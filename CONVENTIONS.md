@@ -135,8 +135,11 @@ exceptions, no partial batches. The gate's receipt covers one exact
 tree and one exact manifest; anything that changes after the green
 run voids the receipt. Self-marked files, denylisted terms, and held
 content are findings the gate blocks on mechanically, not matters of
-reviewer attention. The full contract lives in PUBLICATION.md →
-"The publish gate".
+reviewer attention. The gate and its backward audit ship in this
+repo (`tools/publish-gate.py`, `tools/denylist-audit.py`); the
+denylist they check against does not — it is a private file handed
+to the scripts when they run, and both fail closed without one.
+The full contract lives in PUBLICATION.md → "The publish gate".
 
 The list also audits backward: an addition to the do-not-publish
 list is not complete until a full audit of the live tree confirms
