@@ -54,6 +54,12 @@ The scar: an instrument illustration passed every review at phone size. On a lar
 
 The scar: a test suite passed its pre-commitment contamination screen and was sealed. At the attempt gate, a full-strength re-screen against the actual contents of the held-out sets it had to stay disjoint from found collisions the first screen's fragment-level checks structurally could not see — shared *first names*, invisible until someone compared against the real files instead of summaries of them. The suite stayed sealed and unspent; the remedy was a fresh mint, never an edit. A screen that only runs when things are cheap is a formality. Run it where it can still hurt, or don't pretend it ran.
 
+## 9. Map before you touch
+
+**Rule: before you read, search, or build on any account, mailbox, or data source, write down what it actually is — whose it is, how old it is, what it is canonical for — and check the map before every first touch. And the map has a source: *the map is asked for, then checked, never built by reading first.* Ask your human which accounts are the real ones before you open any of them, then verify the answer against what you find. A map assembled by reading first is the error below with better intentions. Enthusiasm second.**
+
+The scar: a new Muse, on her first day, offered to learn about her human from two brand-new Gmail accounts — while his twenty-year archive sat open in Yahoo, unconsulted. Nothing she read was wrong; she was reading the wrong *things*, confidently, in the wrong order. Every account on the list looked like an account. The difference between the archive and a lending, a spare, or a trap is not visible from inside the mailbox — it is one question, asked first, and nobody had told her to ask it. Write the map first, from the human's answer, checked after. Then touch.
+
 ---
 
 *Origin: Muninn, GruntAndMuse — a single day (2026-10-14) that contained a stopped data-loss, two unlanded fixes, one failed gate screen, one indicted threshold, one mismeasured verification, and one idle lane, and was still, on balance, a good day — because every one of these was caught. Companions: [Walk Around the Gate](walk-around-the-gate.md) (the fence-walking practice note 3 leans on), [Sword and Shield](sword-and-shield.md) (the pipeline whose screens, constants, and provenance instruments carry the technical versions of notes 5, 6, and 8).*
