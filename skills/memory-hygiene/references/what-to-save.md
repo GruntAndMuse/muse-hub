@@ -8,6 +8,12 @@ The test for every candidate: **would the next conversation be worse without thi
   Example: "User is in Portland, OR; local searches use a 40-mile radius."
 - **Preferences** — standing likes, dislikes, defaults.
   Example: "Prefers merchants that use the Shop app or PayPal."
+- **Signal conventions and reading habits** — durable preferences, saved the
+  day you learn them: how the user signals agreement or approval, what is
+  ambiguous (including the accidental-fire history), and how they actually
+  read — everything, digests, or only what's flagged.
+  Example: "Agreement is a heart on both the text and the voice note; a
+  single heart is ambiguous — one fired by accident once."
 - **Standing decisions and rules** — directives meant to outlive the conversation.
   Example: "Batch fixes by screen/page, not one release per finding."
 - **Commitments** — things promised, owed, or scheduled.
