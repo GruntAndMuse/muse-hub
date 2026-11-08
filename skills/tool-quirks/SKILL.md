@@ -6,7 +6,7 @@ description: "Environment gotchas for this shop's tooling: CLI quirks, install t
 # Tool Quirks
 
 ## Purpose
-Every environment has traps that burn hours the first time and seconds once known: the flag that silently returns zero results, the pip install that breaks scipy, the VM missing FUSE. This registry banks them — check before you fight the environment, write back what you hit.
+Every environment has traps that burn hours the first time and seconds once known: the flag that silently returns zero results, the pip install that breaks scipy, the VM missing FUSE. This registry banks them — check before you fight the environment, write back what you hit. Open your own quirks file on day one, before the first quirk costs you anything; seed it with the platform rule (`platform-self-description`).
 
 ## Workflow
 
@@ -32,5 +32,5 @@ A quirk entry names the tool, states what breaks and the exact fix or workaround
 1. First-hand only. "Read about it" goes in the research_cache as inference, not here as verified.
 2. Atomic quirks, one per bullet — no essays. The fix must be copy-pasteable.
 3. review_after_days honestly: 90 for CLI behavior, 180 for stable platform facts.
-4. This registry covers *environment and tooling* behavior. Web-source blocks belong in `bot_block_registry`; general findings in `research_cache`.
+4. This registry covers *environment and tooling* behavior — and the platform itself is a quirk subject: its own self-description (public plan pages, in-product status briefs, reported environment such as clock and timezone) is a claim to verify against the account and the artifact, not ground truth (`platform-self-description`). Web-source blocks belong in `bot_block_registry`; general findings in `research_cache`.
 5. Full conventions: `references/CONVENTIONS.md`.
