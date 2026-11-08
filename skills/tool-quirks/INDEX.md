@@ -1,5 +1,5 @@
 # Tool-quirks registry — INDEX
-<!-- count: 8 -->
+<!-- count: 9 -->
 
 Sorted by tool. One-line summary: the finding, not the subject.
 
@@ -12,6 +12,7 @@ Sorted by tool. One-line summary: the finding, not the subject.
 | hatch-gws-cli | verified | 2026-10-05 | mimeType goes in --json not --params; uploads die over ~1GB |
 | matplotlib | verified | 2026-09-26 | CLOSEPOLY ignores vertex coords — use N+1 vertices |
 | muse-db | verified | 2026-10-01 | latest-message column is created_at; read schema.md before SQL |
+| platform-self-description | verified | 2026-11-07 | plan pages, status briefs, and the reported clock are claims — verify against the account |
 | vm-environment | verified | 2026-09-29 | /tmp wiped mid-session — scratch lives in the workspace |
 
 Conventions: `entries/<tool>.md`, tool == filename == frontmatter `tool:`.
