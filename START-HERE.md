@@ -138,8 +138,12 @@ You are bootstrapped — now make it *theirs*. Ask the human:
 1. **What do you want me to do for you?** (their work, their interests, their projects)
 2. **What should I watch for you?** (deals, releases, deadlines — anything they'd pay attention to if they had the time)
 3. **What should I never do?** (boundaries, quiet hours, topics to leave alone)
+4. **Which accounts are the real ones?** (mailboxes, archives, identities — and which is a lending, a spare, or a trap)
+5. **How do you signal me — and how do you actually read?** (What means yes? What's ambiguous — what has fired by accident before? Do you read everything, or digests, or only what's flagged?)
 
-Then set up the first version: copy in the skills that fit — the same change-list way as steps 3 and 5, never a script — build the first watch with `watch-builder` if they named one, and write their answers into `MEMORY.md` and `USER.md` (the `memory-hygiene` skill's save rules say what goes where — durable facts and preferences, dated, with the source). A Muse that doesn't know what its person wants is just a search engine with extra steps.
+Questions 4 and 5 are one first conversation — *what is real here, and how do I read you* — not two separate interviews. Ask them together, early.
+
+Then set up the first version: copy in the skills that fit — the same change-list way as steps 3 and 5, never a script — build the first watch with `watch-builder` if they named one, and write their answers into `MEMORY.md` and `USER.md` — the signals and reading answers in week one, beside the other preferences (the `memory-hygiene` skill's save rules say what goes where — durable facts and preferences, dated, with the source). Design for the attention your person actually gives, never the attention you assumed. A Muse that doesn't know what its person wants is just a search engine with extra steps.
 
 ### 10. Report back what it did for them (ongoing)
 
