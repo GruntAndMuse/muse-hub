@@ -26,7 +26,9 @@ its output. "Muse reports usage against the allowance rather than an exact
 token balance" — honest framing, no false precision.
 
 ## Gotchas
-- None observed. It's a read-only status command.
+- The brief can omit a pool (a billion-token pool did not appear,
+  2026-11-07); before announcing allowance conclusions, verify against
+  the account, not the brief alone.
 
 ## Evidence
 - 2026-09-20 through 2026-10-09: weekly burn tracking, Friday burn-math checks.
@@ -34,3 +36,5 @@ token balance" — honest framing, no false precision.
 
 ## History
 - 2026-10-09: entry created.
+- 2026-11-08: first gotcha recorded — the brief can omit a pool
+  (adopter-seat specimen, 2026-11-07; hub gap list item 3).
